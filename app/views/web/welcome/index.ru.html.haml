@@ -1,3 +1,7 @@
+= javascript_include_tag  "jquery-1.10.1.min.js"
+= stylesheet_link_tag 'fotorama'
+= javascript_include_tag 'fotorama'
+
 .row.landing_top
   .span6
     %h2 16 - 21 августа 2013 года
@@ -8,7 +12,7 @@
         = program_page
       %a.btn.btn-primary.btn-large{:href => edit_account_path }
         %i.icon-chevron-right
-        Профиль
+          Профиль
     - else
       - if can_registred?
         %a.btn.btn-success.btn-large{:href => new_member_path}
@@ -16,9 +20,16 @@
           Регистрация
       %a.btn.btn-primary.btn-large{:href => new_session_path}
         %i.icon-chevron-right
-        Вход
+          Вход
+
   .span6
-    = image_tag 'splash.png', :width => '430px'
+  - if @photo_album.model && @photo_album.photos.any?
+    .row
+      .span6
+        .fotorama{ "data-transition" => "crossfade", "data-autoplay" => "true", "data-loop" => "true", "data-width" => "500px","data-ratio" => "1200/900" }
+          - @photo_album.sorted_photos.each do |photo|
+            = image_tag photo.image_url, "data-caption" => photo.name
+        %p= link_to "Все фотоальбомы", photo_albums_path
 
 .center.splitter
   = image_tag 'grey_out.png'
@@ -39,24 +50,7 @@
       .span3
         = render 'layouts/shared/twitter_widget'
         = render 'layouts/shared/subscribe_widget'
-- if @photo_album.model && @photo_album.photos.any?
-  .center.splitter
-    = image_tag 'grey_out.png'
-  .row
-    .span6.offset3
-      %h4 Фотоальбом с места события
-      #carousel.carousel.slide
-        .carousel-inner
-          - @photo_album.sorted_photos.each_with_index do |photo, i|
-            .item{:class => i == 0 ? "active" : ''}
-              = image_tag photo.image_url(:carousel)
-              - if photo.name? || photo.description?
-                .carousel-caption
-                  %h4= photo.name
-                  %p= photo.description
-        %a.carousel-control.left{"data-slide" => "prev", :href => "#carousel"} ‹
-        %a.carousel-control.right{"data-slide" => "next", :href => "#carousel"} ›
-      %p= link_to "Все фотоальбомы", photo_albums_path
+
 
 .center.splitter
   = image_tag 'grey_out.png'
@@ -65,33 +59,23 @@
     .row.landing_lower
       .span4
         %h4 Кто наша аудитория?
-        %p Студенты и школьники, желающие работать в сфере ИТ и бегло программирующие хотя бы на одном языке программирования.
-      .span4
-        %h4 Как мы собираемся это делать?
-        %p Определим тестовое задание. Разместим его на сайте. Проведём отбор по его выполнению.
-        %p Пригласим на семинар специалистов.
-        %p Все дни на семинаре участники с утра до вечера будут заниматься разработкой проектов.
-      .span4
-        %h4 Какие проекты будут разрабатываться участниками?
-        %p Микро-проекты от ведущих ИТ-компаний Ульяновска.
-
-    .row.landing_lower
+        %p Молодёжь в возрасте до 18 лет включительно, желающая работать в будущем в ИТ-сфере.
       .span4
         %h4 Зачем это нужно?
         %ul
           %li Создание площадки для самореализации будущих специалистов
           %li Обмен опытом между участниками и действующими специалистами ведущих компании по разработке программного обеспечения г.Ульяновска
-          %li Создание «движухи» для молодых программистов Ульяновской области Мероприятие реализуется на общественных началах. В планах сделать Смену Deadline ежегодным мероприятием.
+          %li Создание «движухи» для молодых программистов Ульяновской области. Мероприятие реализуется на общественных началах. Лесная школа Deadline стала традиционной и проводится уже второй год.
       .span4
         %h4 За чей счёт?
-        %p Для участников мероприятие будет бесплатным.
+        %p Для участников мероприятие будет
+          %b бесплатным!!1
         %p Проживание, питание, доставка участников до места назначения и обратно будут организованы Департаментом молодёжной политики и Молодёжным инициативным центром.
         %p Каждый участник должен иметь при себе личный ноутбук и желание плодотворно поработать.
       .span4
         %h4 Что с собой взять?
-        %p Каждый участник должен иметь при себе личный ноутбук, желание плодотворно поработать, копию паспорта (свидетельства о рождении), оригинал медицинского полиса.
+        %p Каждый участник должен иметь при себе желание плодотворно поработать, копию паспорта (свидетельства о рождении), оригинал медицинского полиса.
         %p Все участники обучающей смены должны также сделать прививку от клещевого энцефалита. Если сделать её не успели или не смогли, то необходимо предоставить МИЦ заявление от родителей (для несовершеннолетних) или от себя (для людей старше 18 лет) о том, что ответственность за жизнь и здоровье в связи с клещевым энцефалитом с организаторов снимается.
-
 
 .center.splitter
   = image_tag 'grey_out.png'
