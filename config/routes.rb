@@ -34,6 +34,6 @@ DeadlineCamp::Application.routes.draw do
     resources :pages, :only => [:show]
     resources :news, :only => [:index, :show]
     resources :photo_albums, :only => [:index]
+    resource :deadline_2012
   end
-
 end
