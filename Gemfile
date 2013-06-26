@@ -61,6 +61,7 @@ group :development do
   gem 'rvm-capistrano'
   gem 'capistrano-ext'
   gem 'capistrano_colors'
+  gem 'better_errors'
 end
 
 group :test do
