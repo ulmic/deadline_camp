@@ -23,10 +23,11 @@
           Вход
 
   .span6
+    %h4 Deadline 2012
   - if @photo_album.model && @photo_album.photos.any?
     .row
       .span6
-        .fotorama{ "data-transition" => "crossfade", "data-autoplay" => "true", "data-loop" => "true", "data-width" => "500px","data-ratio" => "1200/900" }
+        .fotorama{ "data-transition" => "crossfade", "data-autoplay" => "true", "data-loop" => "true", "data-width" => "400px","data-ratio" => "1200/900" }
           - @photo_album.sorted_photos.each do |photo|
             = image_tag photo.image_url, "data-caption" => photo.name
         %p= link_to "Все фотоальбомы", photo_albums_path
