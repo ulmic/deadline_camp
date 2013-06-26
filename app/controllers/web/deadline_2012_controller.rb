@@ -1,6 +1,8 @@
-class Web::Deadline2012Controller < ApplicationController
+class Web::Deadline2012Controller < Web::ApplicationController
   def index
     @album = PhotoAlbumDecorator.decorate PhotoAlbum.welcome_album
-    @news = News.all.year_published_at(2012)
+    @news = News.all
+
+    title t('.dealine_2012')
   end
 end
