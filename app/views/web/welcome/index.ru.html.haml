@@ -50,7 +50,6 @@
           .news_link= link_to "Все новости", news_index_path
       .span3
         = render 'layouts/shared/twitter_widget'
-        = render 'layouts/shared/subscribe_widget'
 
 
 .center.splitter
@@ -85,47 +84,14 @@
   .span12
     %h4 Организаторы
     .span2
+      %br
       %a{:href => 'http://www.ulmic.ru/'}
-        = image_tag 'picture_mic.png', :class => "logo_sponsor"
+        = image_tag 'picture_mic.png', :class => "logo_org"
     .span2
-      %p
-        Некоммерческое
-        %br
-        Партнерство
-        %br
-        Содействия
-        %br
-        Развитию ИТ
-    .span2
-      %a{:href => "http://ulgov.ru/"}
-        = image_tag '3_logo_ul_gov.png', :class => "logo_sponsor"
-    .span2
-      = image_tag '4_logo_department.png', :class => "logo_sponsor"
-    .span2
-      %a{:href => "http://itc73.ru/"}
-        = image_tag '5_logo_itc.png'
+      = image_tag '4_logo_department.png', :class => "logo_org"
 .row.landing_bottom
   .span12
-    .span2
-      %a{:href => "http://kaize.ru/"}
-        = image_tag '6_logo_kaize.png'
-    .span2
-      %a{:href => "http://www.simtech.ru/"}
-        = image_tag '7_logo_simtech.png'
-    .span2
-      %a{:href => "http://m-st.ru/"}
-        = image_tag '8_logo_mst.png'
-    .span2
-      %a{:href => "http://simbirsoft.com/"}
-        = image_tag '9_logo_simbirsoft.png'
-    .span2
-      %a{:href => "http://itmcompany.ru/"}
-        = image_tag '10_logo_itm.png'
-.row.landing_bottom
-  .span12
-    .span2
-      %a{:href => "http://interra-group.ru/"}
-        = image_tag 'logo_interra.png'
-    .span2
-      %a{:href => "http://mymediacompany.ru/"}
-        = image_tag 'logo_mmc.png'
+    %h4 Информационные партнёры
+    %br
+    .span4
+      = image_tag 'http://nastachku.ru/images/logo-srit.jpg'
