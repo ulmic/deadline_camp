@@ -603,7 +603,9 @@ CREATE TABLE members (
     twitter character varying(255),
     vkontakte character varying(255),
     city character varying(255),
-    birthday date
+    birthday date,
+    photo character varying(255),
+    middle_name character varying(255)
 );
 
 
@@ -1397,3 +1399,7 @@ INSERT INTO schema_migrations (version) VALUES ('20130704160131');
 INSERT INTO schema_migrations (version) VALUES ('20130704160253');
 
 INSERT INTO schema_migrations (version) VALUES ('20130704160824');
+
+INSERT INTO schema_migrations (version) VALUES ('20130704181556');
+
+INSERT INTO schema_migrations (version) VALUES ('20130704192457');
