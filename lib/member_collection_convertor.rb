@@ -28,6 +28,7 @@ class MemberCollectionConvertor
         :state,
         :email,
         :first_name,
+        :middle_name,
         :last_name,
         :patronymic,
         :phone,

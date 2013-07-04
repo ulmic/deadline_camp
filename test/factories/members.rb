@@ -5,6 +5,7 @@ FactoryGirl.define do
     email
     password    { generate :string }
     first_name  { generate :name }
+    middle_name { generate :name }
     last_name   { generate :name }
     phone
     city        { generate :string }
