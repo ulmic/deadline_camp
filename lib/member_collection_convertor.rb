@@ -30,7 +30,7 @@ class MemberCollectionConvertor
         :first_name,
         :middle_name,
         :last_name,
-        :patronymic,
+        :reason,
         :phone,
         :skype,
         :jabber,

@@ -10,13 +10,13 @@ FactoryGirl.define do
     phone
     city        { generate :string }
     birthday    { -16.year.from_now }
+    reason      { generate :string }
 
     trait :with_auth_token do
       auth_token { generate :name }
     end
 
     trait :with_full_profile do
-      patronymic  { generate :name }
       skype       { generate :string }
       jabber      { generate :string }
       icq         { generate :integer }
