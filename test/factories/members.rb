@@ -19,19 +19,10 @@ FactoryGirl.define do
       skype { generate :string }
       jabber { generate :string }
       icq { generate :integer }
-      institute { generate :string }
-      start_year { generate :integer }
-      finish_year { generate :integer }
-      department { generate :string }
-      profession { generate :string }
-      group { generate :string }
-      degree { generate :string }
-      gpa { generate :site }
       camp_time true
       camp_life true
       camp_fee true
       camp_notebook true
-      camp_training true
       how_hear_about_as { generate :string }
       vkontakte { generate :uri }
       facebook { generate :uri }

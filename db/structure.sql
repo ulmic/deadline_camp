@@ -585,13 +585,7 @@ CREATE TABLE members (
     skype character varying(255),
     jabber character varying(255),
     icq integer,
-    institute character varying(255),
-    start_year integer,
-    finish_year integer,
-    department character varying(255),
-    profession character varying(255),
-    degree character varying(255),
-    gpa character varying(255),
+    school character varying(255),
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
     web character varying(255),
@@ -599,11 +593,8 @@ CREATE TABLE members (
     camp_life boolean,
     camp_fee boolean,
     camp_notebook boolean,
-    camp_training boolean,
     hobby text,
     sport text,
-    start_month character varying(255),
-    finish_month character varying(255),
     password_digest character varying(255) NOT NULL,
     auth_token character varying(255),
     "group" character varying(255),
@@ -612,8 +603,7 @@ CREATE TABLE members (
     twitter character varying(255),
     vkontakte character varying(255),
     city character varying(255),
-    birthday date,
-    schoolyear_count integer
+    birthday date
 );
 
 
@@ -1393,3 +1383,17 @@ INSERT INTO schema_migrations (version) VALUES ('20120907104113');
 INSERT INTO schema_migrations (version) VALUES ('20120907105301');
 
 INSERT INTO schema_migrations (version) VALUES ('20120907105330');
+
+INSERT INTO schema_migrations (version) VALUES ('20130704155359');
+
+INSERT INTO schema_migrations (version) VALUES ('20130704155619');
+
+INSERT INTO schema_migrations (version) VALUES ('20130704155854');
+
+INSERT INTO schema_migrations (version) VALUES ('20130704160032');
+
+INSERT INTO schema_migrations (version) VALUES ('20130704160131');
+
+INSERT INTO schema_migrations (version) VALUES ('20130704160253');
+
+INSERT INTO schema_migrations (version) VALUES ('20130704160824');
