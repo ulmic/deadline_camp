@@ -27,23 +27,32 @@
               %fieldset
                 %legend= member_t.t('contact_info')
                 = f.input :first_name
+                = f.input :middle_name
                 = f.input :last_name
-                = f.input :patronymic
                 = f.input :phone, :hint => member_t.t('phone_hint')
                 = f.input :city
-                = f.input :birthday
-                = f.input :skype
-                = f.input :jabber
-                = f.input :icq
-                -#= f.input :facebook, :hint => member_t.t('facebook_hint')
-                -#= f.input :twitter, :hint => member_t.t('twitter_hint')
-                -#= f.input :vkontakte, :hint => member_t.t('vkontakte_hint')
-                = f.input :web
+                = f.input :birthday, :start_year => 1994, :end_year => 1999
+
+
+
+
+
+
+
             .span6
               %fieldset
                 %legend= member_t.t('education')
                 = f.input :group
                 = f.input :school
+              %fieldset
+                %legend= member_t.t('social')
+                = f.input :skype
+                = f.input :jabber
+                = f.input :icq
+                = f.input :facebook, :hint => member_t.t('facebook_hint')
+                = f.input :twitter, :hint => member_t.t('twitter_hint')
+                = f.input :vkontakte, :hint => member_t.t('vkontakte_hint')
+                = f.input :web
 
         .tab-pane#additional_educations
           %fieldset

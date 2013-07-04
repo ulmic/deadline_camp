@@ -15,13 +15,20 @@
           = f.input :email
           = f.input :password
           = f.input :password_confirmation
-
       .span6
         %fieldset
           %legend= member_t.t('education')
           = f.input :school
           = f.input :group
-
+        %fieldset
+          %legend= member_t.t('social')
+          = f.input :skype
+          = f.input :jabber
+          = f.input :icq
+          = f.input :facebook, :hint => member_t.t('facebook_hint')
+          = f.input :twitter, :hint => member_t.t('twitter_hint')
+          = f.input :vkontakte, :hint => member_t.t('vkontakte_hint')
+          = f.input :web
     %fieldset
       %legend= member_t.t 'camp'
       = f.input :camp_time, :label => false, :inline_label => member_t.t('camp_time')

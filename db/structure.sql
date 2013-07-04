@@ -580,7 +580,6 @@ CREATE TABLE members (
     email character varying(255),
     first_name character varying(255),
     last_name character varying(255),
-    patronymic character varying(255),
     phone character varying(255),
     skype character varying(255),
     jabber character varying(255),
@@ -605,7 +604,8 @@ CREATE TABLE members (
     city character varying(255),
     birthday date,
     photo character varying(255),
-    middle_name character varying(255)
+    middle_name character varying(255),
+    reason text
 );
 
 
@@ -1403,3 +1403,7 @@ INSERT INTO schema_migrations (version) VALUES ('20130704160824');
 INSERT INTO schema_migrations (version) VALUES ('20130704181556');
 
 INSERT INTO schema_migrations (version) VALUES ('20130704192457');
+
+INSERT INTO schema_migrations (version) VALUES ('20130704211054');
+
+INSERT INTO schema_migrations (version) VALUES ('20130704212116');
