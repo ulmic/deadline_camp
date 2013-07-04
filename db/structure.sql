@@ -605,7 +605,8 @@ CREATE TABLE members (
     birthday date,
     photo character varying(255),
     middle_name character varying(255),
-    reason text
+    reason text,
+    question text
 );
 
 
@@ -1407,3 +1408,5 @@ INSERT INTO schema_migrations (version) VALUES ('20130704192457');
 INSERT INTO schema_migrations (version) VALUES ('20130704211054');
 
 INSERT INTO schema_migrations (version) VALUES ('20130704212116');
+
+INSERT INTO schema_migrations (version) VALUES ('20130704213916');
