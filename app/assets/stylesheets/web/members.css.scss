@@ -1,0 +1,11 @@
+.field textarea {
+  height: 100px;
+}
+
+.field textarea:focus {
+  height: 300px;
+}
+
+.field label {
+  margin: 10px;
+}

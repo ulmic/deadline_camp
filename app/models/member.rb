@@ -15,7 +15,7 @@ class Member < ActiveRecord::Base
                   :facebook,          :vkontakte,
                   :city,              :birthday,
                   :school,            :group,
-                  :auth_token
+                  :auth_token,        :reason
 
   include UsefullScopes
 
@@ -45,6 +45,7 @@ class Member < ActiveRecord::Base
   validates :city, :presence => true
   validates :birthday, :presence => true,
                        :date => { :after => Date.new(1994, 8, 16), :before => Date.new(1999, 8, 16) }
+  validates :reason, presence: true
   state_machine :state, :initial => :new do
     state :new
     state :accepted

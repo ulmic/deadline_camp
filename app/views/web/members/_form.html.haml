@@ -1,3 +1,5 @@
+= stylesheet_link_tag "web/members"
+
 = simple_form_for @member, :validate => true, :url => members_path, :html => {:class => "form-horizontal well"} do |f|
   = f.error_notification
 
@@ -29,6 +31,13 @@
           = f.input :twitter, :hint => member_t.t('twitter_hint')
           = f.input :vkontakte, :hint => member_t.t('vkontakte_hint')
           = f.input :web
+    %fieldset
+      %legend= member_t.t 'good_questions'
+      .field
+        = f.label :reason
+        %br
+        = f.text_area :reason, :row => 5, :class => :span6
+
     %fieldset
       %legend= member_t.t 'camp'
       = f.input :camp_time, :label => false, :inline_label => member_t.t('camp_time')
