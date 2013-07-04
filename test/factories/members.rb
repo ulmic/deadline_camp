@@ -11,6 +11,7 @@ FactoryGirl.define do
     city        { generate :string }
     birthday    { -16.year.from_now }
     reason      { generate :string }
+    question    { generate :string }
 
     trait :with_auth_token do
       auth_token { generate :name }
@@ -18,8 +19,6 @@ FactoryGirl.define do
 
     trait :with_full_profile do
       skype       { generate :string }
-      jabber      { generate :string }
-      icq         { generate :integer }
       camp_time true
       camp_life true
       camp_fee true

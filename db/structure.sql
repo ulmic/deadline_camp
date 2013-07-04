@@ -582,8 +582,6 @@ CREATE TABLE members (
     last_name character varying(255),
     phone character varying(255),
     skype character varying(255),
-    jabber character varying(255),
-    icq integer,
     school character varying(255),
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
@@ -1410,3 +1408,5 @@ INSERT INTO schema_migrations (version) VALUES ('20130704211054');
 INSERT INTO schema_migrations (version) VALUES ('20130704212116');
 
 INSERT INTO schema_migrations (version) VALUES ('20130704213916');
+
+INSERT INTO schema_migrations (version) VALUES ('20130704215419');
