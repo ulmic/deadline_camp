@@ -68,32 +68,26 @@ ru:
         updated_at: 'Дата обновления'
       member:
         id: 'id'
-        first_name: 'Имя'
-        last_name: 'Фамилия'
-        patronymic: 'Отчество'
-        state: 'Текущее состояние'
-        state_event: 'Действие'
-        created_at: 'Дата создания'
-        updated_at: 'Дата обновления'
-        phone: 'Телефон'
-        institute: 'ВУЗ'
-        start_year: 'Начало обучения'
-        finish_year: 'Окончание обучения'
-        department: 'Факультет'
-        profession: 'Специальность'
-        group: 'Группа'
-        degree: 'Степень'
-        gpa: 'Средний балл диплома'
-        hobby: 'Хобби'
-        sport: 'Спорт'
-        web: 'Сайт'
-        vkontakte: 'Вконтакте'
-        password: "Пароль"
-        password_confirmation: "Подтверждение пароля"
-        how_hear_about_as: "Откуда вы узнали о нас?"
-        other_how_hear_about_as: "Другое"
-        city: 'Город'
-        birthday: 'Дата рождения'
+        first_name:   'Фамилия'
+        middle_name:  'Имя'
+        last_name:    'Отчество'
+        state:        'Текущее состояние'
+        state_event:  'Действие'
+        created_at:   'Дата создания'
+        updated_at:   'Дата обновления'
+        phone:        'Телефон'
+        group:        'Группа / Класс'
+        school:       'Учебное заведение'
+        hobby:        'Хобби'
+        sport:        'Спорт'
+        web:          'Сайт'
+        vkontakte:    'ВКонтакте'
+        password:     "Пароль"
+        password_confirmation:    "Подтверждение пароля"
+        how_hear_about_as:        "Откуда вы узнали о нас?"
+        other_how_hear_about_as:  "Другое"
+        city:             'Город'
+        birthday:         'Дата рождения'
         schoolyear_count: "Сколько курсов закончили?"
         # decorate translates
         education: 'Образование'
