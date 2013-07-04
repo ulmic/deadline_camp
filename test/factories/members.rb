@@ -9,7 +9,7 @@ FactoryGirl.define do
     last_name   { generate :name }
     phone
     city        { generate :string }
-    birthday    { -19.year.from_now }
+    birthday    { -16.year.from_now }
 
     trait :with_auth_token do
       auth_token { generate :name }

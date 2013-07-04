@@ -43,8 +43,8 @@ class Member < ActiveRecord::Base
   validates :twitter, :slug => true, :allow_blank => true
   validates :vkontakte, :slug => true, :allow_blank => true
   validates :city, :presence => true
-  validates :birthday, :presence => true
-
+  validates :birthday, :presence => true,
+                       :date => { :after => Date.new(1994, 8, 16), :before => Date.new(1999, 8, 16) }
   state_machine :state, :initial => :new do
     state :new
     state :accepted

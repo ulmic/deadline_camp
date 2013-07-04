@@ -27,6 +27,7 @@ gem 'usefull_scopes'
 gem 'to_xls'
 gem "draper", "~> 0.18.0"
 gem "gon"
+gem 'date_validator'
 
 # Gems used only for assets and not required
 # in production environments by default.
