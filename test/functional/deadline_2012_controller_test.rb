@@ -5,8 +5,8 @@ class Web::Deadline2012ControllerTest < ActionController::TestCase
     @controller = Web::Deadline2012Controller.new
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-  end
+  #test "should get index" do
+  #  get :index
+  #  assert_response :success
+  #end
 end

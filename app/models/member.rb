@@ -44,7 +44,6 @@ class Member < ActiveRecord::Base
   validates :vkontakte, :slug => true, :allow_blank => true
   validates :city, :presence => true
   validates :birthday, :presence => true
-  validates :photo, presence: true
 
   state_machine :state, :initial => :new do
     state :new
