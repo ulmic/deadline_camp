@@ -13,7 +13,7 @@ gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
 gem 'configus'
 gem 'state_machine'
-gem "carrierwave"
+gem "carrierwave", '~> 0.8.0'
 gem "mini_magick"
 gem 'russian'
 gem 'kaminari'
@@ -27,6 +27,7 @@ gem 'usefull_scopes'
 gem 'to_xls'
 gem "draper", "~> 0.18.0"
 gem "gon"
+gem 'date_validator'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -61,6 +62,7 @@ group :development do
   gem 'rvm-capistrano'
   gem 'capistrano-ext'
   gem 'capistrano_colors'
+  gem 'better_errors'
 end
 
 group :test do

@@ -22,7 +22,6 @@ DeadlineCamp::Application.routes.draw do
       resource :session, :only => [:new, :create, :destroy]
     end
 
-
     resources :members, :only => [:index, :new, :create]
     resource :session, :only => [:new, :create, :destroy]
     resource :account, :only => [:show, :edit, :update] do
@@ -34,6 +33,6 @@ DeadlineCamp::Application.routes.draw do
     resources :pages, :only => [:show]
     resources :news, :only => [:index, :show]
     resources :photo_albums, :only => [:index]
+    resources :deadline2012, :except => [:show, :new, :edit, :destroy, :update], :controller => "deadline2012"
   end
-
 end

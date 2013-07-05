@@ -3,40 +3,30 @@
 FactoryGirl.define do
   factory :member do
     email
-    password { generate :string }
-    first_name { generate :name }
-    last_name { generate :name }
+    password    { generate :string }
+    first_name  { generate :name }
+    middle_name { generate :name }
+    last_name   { generate :name }
     phone
-    city { generate :string }
-    birthday { -19.year.from_now }
+    city        { generate :string }
+    birthday    { -16.year.from_now }
+    reason      { generate :string }
+    question    { generate :string }
 
     trait :with_auth_token do
       auth_token { generate :name }
     end
 
     trait :with_full_profile do
-      patronymic { generate :name }
-      skype { generate :string }
-      jabber { generate :string }
-      icq { generate :integer }
-      institute { generate :string }
-      start_year { generate :integer }
-      finish_year { generate :integer }
-      department { generate :string }
-      profession { generate :string }
-      group { generate :string }
-      degree { generate :string }
-      gpa { generate :site }
+      skype       { generate :string }
       camp_time true
       camp_life true
       camp_fee true
       camp_notebook true
-      camp_training true
       how_hear_about_as { generate :string }
-      vkontakte { generate :uri }
-      facebook { generate :uri }
-      twitter { generate :uri }
-      schoolyear_count { generate :integer }
+      vkontakte         { generate :uri }
+      facebook          { generate :uri }
+      twitter           { generate :uri }
 
       after(:create) do |instance|
         with_options :member => instance do |m|

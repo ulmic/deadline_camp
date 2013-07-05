@@ -1,3 +1,6 @@
+= stylesheet_link_tag "web/members"
+= stylesheet_link_tag "web/social"
+
 = simple_form_for @member, :validate => true, :url => members_path, :html => {:class => "form-horizontal well"} do |f|
   = f.error_notification
 
@@ -7,39 +10,42 @@
         %fieldset
           %legend= member_t.t('contact_info')
           = f.input :first_name
+          = f.input :middle_name
           = f.input :last_name
           = f.input :phone, :hint => member_t.t('phone_hint')
           = f.input :city
-          = f.input :birthday, :as => :date_picker
+          = f.input :birthday, :start_year => 1994, :end_year => 1999
           = f.input :email
           = f.input :password
           = f.input :password_confirmation
-
       .span6
         %fieldset
           %legend= member_t.t('education')
-          = f.input :institute
-          = f.input :study_start do
-            = f.input_field :start_month, :collection => Member::STUDY_MONTH, :include_blank => t('datetime.prompts.month'),
-              :style => 'width: 155px'
-            = f.input_field :start_year, :placeholder => t('datetime.prompts.year'), :class => 'span1'
-          = f.input :study_finish do
-            = f.input_field :finish_month, :collection => Member::STUDY_MONTH, :include_blank => t('datetime.prompts.month'),
-              :style => 'width: 155px'
-            = f.input_field :finish_year, :placeholder => t('datetime.prompts.year'), :class => 'span1'
-          = f.input :department
-          = f.input :profession
+          = f.input :school
           = f.input :group
-          = f.input :schoolyear_count, :collection => Member::SCHOOLYEARS
-          = f.input :degree
-          = f.input :gpa
+        %fieldset
+          %legend= member_t.t('social')
+          = f.input :skype
+          = f.input :facebook, :hint => member_t.t('facebook_hint')
+          = f.input :twitter, :hint => member_t.t('twitter_hint')
+          = f.input :vkontakte, :hint => member_t.t('vkontakte_hint')
+          = f.input :web
+    %fieldset
+      %legend= member_t.t 'good_questions'
+      .field
+        = f.label :reason
+        %br
+        = f.text_area :reason, :row => 5, :class => :span6
+      .field
+        = f.label :question
+        %br
+        = f.text_area :question, :row => 5, :class => :span6
 
     %fieldset
       %legend= member_t.t 'camp'
       = f.input :camp_time, :label => false, :inline_label => member_t.t('camp_time')
       = f.input :camp_life, :label => false, :inline_label => member_t.t('camp_life')
       = f.input :camp_notebook, :label => false, :inline_label => member_t.t('camp_notebook')
-      = f.input :camp_training, :label => false, :inline_label => member_t.t('camp_training')
 
     %fieldset
       %legend= member_t.t 'how_hear_about_as'

@@ -1,5 +1,7 @@
 - @news.each do |n|
   .well
+    - if n.photo.present?
+      = image_tag n.photo.thumb
     %a.b-news{:href => news_path(n)}
       %h4= n.name
     - if n.published_at?

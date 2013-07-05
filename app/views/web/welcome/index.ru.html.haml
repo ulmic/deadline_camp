@@ -1,6 +1,11 @@
+= javascript_include_tag  "jquery-1.10.1.min.js"
+= stylesheet_link_tag 'fotorama'
+= javascript_include_tag 'fotorama'
+= stylesheet_link_tag 'admin/news'
+
 .row.landing_top
   .span6
-    %h2 Летом 2013 года.
+    %h2 16 - 21 августа 2013 года
     %h3 Выездной обучающий семинар для молодёжи, которая хочет работать в сфере ИТ, в частности, заниматься разработкой программных продуктов. Участники в течение нескольких дней будут работать над продуктом.
     - if member_signed_in?
       %a.btn.btn-success.btn-large{:href => page_path(program_page) }
@@ -8,19 +13,25 @@
         = program_page
       %a.btn.btn-primary.btn-large{:href => edit_account_path }
         %i.icon-chevron-right
-        Профиль
+          Профиль
     - else
       - if can_registred?
         %a.btn.btn-success.btn-large{:href => new_member_path}
           %i.icon-chevron-right
-          Регистрация *
+          Регистрация
       %a.btn.btn-primary.btn-large{:href => new_session_path}
         %i.icon-chevron-right
-        Вход
-      -#- if can_registred?
-        %p * #{link_to 'Тестовые задания', '/news/testTask'} перестанут принимать 3 июля в 13:00.
+          Вход
+
   .span6
-    = image_tag 'splash.png', :width => '430px'
+    %h4 Deadline 2012
+  - if @photo_album.model && @photo_album.photos.any?
+    .row
+      .span6
+        .fotorama{ "data-transition" => "crossfade", "data-autoplay" => "true", "data-loop" => "true", "data-width" => "400px","data-ratio" => "1200/900" }
+          - @photo_album.sorted_photos.each do |photo|
+            = image_tag photo.image_url, "data-caption" => photo.name
+        %p= link_to "Все фотоальбомы", photo_albums_path
 
 .center.splitter
   = image_tag 'grey_out.png'
@@ -29,120 +40,46 @@
     .row.landing_lower
       .span9
         - if @news.any?
-          %h3 Новости
+          %h3 Новости Deadline 2013
           - @news.each do |n|
             .well
+              - if n.photo.present?
+                = image_tag n.photo.thumb
               %a.b-news{:href => news_path(n)}
                 %h4= n.name
               - if n.published_at?
                 .help-block= l n.published_at, :format => :news
               != truncate_sanitize_rem_br n.body, 250
-          .news_link= link_to "Все новости", news_index_path
+          .news_link= link_to "Все новости", news_index_path, :class => 'btn'
       .span3
         = render 'layouts/shared/twitter_widget'
-        = render 'layouts/shared/subscribe_widget'
-- if @photo_album.model && @photo_album.photos.any?
-  .center.splitter
-    = image_tag 'grey_out.png'
-  .row
-    .span6.offset3
-      %h4 Фотоальбом с места события
-      #carousel.carousel.slide
-        .carousel-inner
-          - @photo_album.sorted_photos.each_with_index do |photo, i|
-            .item{:class => i == 0 ? "active" : ''}
-              = image_tag photo.image_url(:carousel)
-              - if photo.name? || photo.description?
-                .carousel-caption
-                  %h4= photo.name
-                  %p= photo.description
-        %a.carousel-control.left{"data-slide" => "prev", :href => "#carousel"} ‹
-        %a.carousel-control.right{"data-slide" => "next", :href => "#carousel"} ›
-      %p= link_to "Все фотоальбомы", photo_albums_path
 
-  -#.row
-    .span12
-      \#1
-      %h4= @photo_album.name
-      %p= @photo_album.description
-      - @photo_album.sorted_photos_with_limit( configus.photos.main_galary_limit ).in_groups_of(3, false) do |group|
-        %ul.thumbnails
-          - group.each do |photo|
-            %li.span4= image_tag photo.image_url(:galary)
-      %p= link_to "Все фотоальбомы", photo_albums_path
-
-  -#.row
-    .span12
-      \#3
-      %h4 Фотоальбом с места события
-      #carousel3.carousel.slide
-        .carousel-inner
-          - i = 0
-          - @photo_album.sorted_photos.in_groups_of(3, false) do |group|
-            .item.offset1{:class => i == 0 ? "active" : ''}
-              - group.each do |photo|
-                .span3= image_tag photo.image_url(:galary)
-                -#- if photo.name? || photo.description?
-                  .carousel-caption
-                    %h4= photo.name
-                    %p= photo.description
-            - i += 1
-        %a.carousel-control.left{"data-slide" => "prev", :href => "#carousel3"} ‹
-        %a.carousel-control.right{"data-slide" => "next", :href => "#carousel3"} ›
-      %p= link_to "Все фотоальбомы", photo_albums_path
-
-  -#.row
-    .span12
-      \#4
-      %h4= @photo_album.name
-      %p= @photo_album.description
-      #carousel4.carousel.slide
-        .carousel-inner
-          - @photo_album.sorted_photos.each_with_index do |photo, i|
-            .item{:class => i == 0 ? "active" : ''}
-              = image_tag photo.image_url(:main_carousel2)
-              - if photo.name? || photo.description?
-                .carousel-caption
-                  %h4= photo.name
-                  %p= photo.description
-        %a.carousel-control.left{"data-slide" => "prev", :href => "#carousel4"} ‹
-        %a.carousel-control.right{"data-slide" => "next", :href => "#carousel4"} ›
-      %p= link_to "Все фотоальбомы", photo_albums_path
 
 .center.splitter
   = image_tag 'grey_out.png'
 .row
   .span12
     .row.landing_lower
-      .span4
+      .span6
         %h4 Кто наша аудитория?
-        %p Студенты и школьники, желающие работать в сфере ИТ и бегло программирующие хотя бы на одном языке программирования.
-      .span4
-        %h4 Как мы собираемся это делать?
-        %p Определим тестовое задание. Разместим его на сайте. Проведём отбор по его выполнению.
-        %p Пригласим на семинар специалистов.
-        %p Все дни на семинаре участники с утра до вечера будут заниматься разработкой проектов.
-      .span4
-        %h4 Какие проекты будут разрабатываться участниками?
-        %p Микро-проекты от ведущих ИТ-компаний Ульяновска.
-
-    .row.landing_lower
-      .span4
+        %p Молодёжь в возрасте до 18 лет включительно, желающая работать в будущем в ИТ-сфере.
+      .span6
         %h4 Зачем это нужно?
         %ul
           %li Создание площадки для самореализации будущих специалистов
           %li Обмен опытом между участниками и действующими специалистами ведущих компании по разработке программного обеспечения г.Ульяновска
-          %li Создание «движухи» для молодых программистов Ульяновской области Мероприятие реализуется на общественных началах. В планах сделать Смену Deadline ежегодным мероприятием.
-      .span4
+          %li Создание «движухи» для молодых программистов Ульяновской области. Мероприятие реализуется на общественных началах. Лесная школа Deadline стала традиционной и проводится уже второй год.
+      .span6
         %h4 За чей счёт?
-        %p Для участников мероприятие будет бесплатным.
-        %p Проживание, питание, доставка участников до места назначения и обратно будут организованы Департаментом молодёжной политики и Молодёжным инициативным центром.
-        %p Каждый участник должен иметь при себе личный ноутбук и желание плодотворно поработать.
-      .span4
+        %ul
+          %li Для участников мероприятие будет бесплатным!!!
+          %li Проживание, питание, доставка участников до места назначения и обратно будут организованы Департаментом молодёжной политики и Молодёжным инициативным центром.
+          %li Каждый участник должен иметь при себе желание плодотворно поработать, копию паспорта (свидетельства о рождеении) и страховой медицинский полис.
+      .span6
         %h4 Что с собой взять?
-        %p Каждый участник должен иметь при себе личный ноутбук, желание плодотворно поработать, копию паспорта (свидетельства о рождении), оригинал медицинского полиса.
-        %p Все участники обучающей смены должны также сделать прививку от клещевого энцефалита. Если сделать её не успели или не смогли, то необходимо предоставить МИЦ заявление от родителей (для несовершеннолетних) или от себя (для людей старше 18 лет) о том, что ответственность за жизнь и здоровье в связи с клещевым энцефалитом с организаторов снимается.
-
+        %ul
+          %li Каждый участник должен иметь при себе желание плодотворно поработать, копию паспорта (свидетельства о рождении), оригинал медицинского полиса.
+          %li Все участники обучающей смены должны также сделать прививку от клещевого энцефалита. Если сделать её не успели или не смогли, то необходимо предоставить МИЦ заявление от родителей (для несовершеннолетних) или от себя (для людей старше 18 лет) о том, что ответственность за жизнь и здоровье в связи с клещевым энцефалитом с организаторов снимается.
 
 .center.splitter
   = image_tag 'grey_out.png'
@@ -150,47 +87,14 @@
   .span12
     %h4 Организаторы
     .span2
+      %br
       %a{:href => 'http://www.ulmic.ru/'}
-        = image_tag 'picture_mic.png', :class => "logo_sponsor"
+        = image_tag 'picture_mic.png', :class => "logo_org"
     .span2
-      %p
-        Некоммерческое
-        %br
-        Партнерство
-        %br
-        Содействия
-        %br
-        Развитию ИТ
-    .span2
-      %a{:href => "http://ulgov.ru/"}
-        = image_tag '3_logo_ul_gov.png', :class => "logo_sponsor"
-    .span2
-      = image_tag '4_logo_department.png', :class => "logo_sponsor"
-    .span2
-      %a{:href => "http://itc73.ru/"}
-        = image_tag '5_logo_itc.png'
+      = image_tag '4_logo_department.png', :class => "logo_org"
 .row.landing_bottom
   .span12
-    .span2
-      %a{:href => "http://kaize.ru/"}
-        = image_tag '6_logo_kaize.png'
-    .span2
-      %a{:href => "http://www.simtech.ru/"}
-        = image_tag '7_logo_simtech.png'
-    .span2
-      %a{:href => "http://m-st.ru/"}
-        = image_tag '8_logo_mst.png'
-    .span2
-      %a{:href => "http://simbirsoft.com/"}
-        = image_tag '9_logo_simbirsoft.png'
-    .span2
-      %a{:href => "http://itmcompany.ru/"}
-        = image_tag '10_logo_itm.png'
-.row.landing_bottom
-  .span12
-    .span2
-      %a{:href => "http://interra-group.ru/"}
-        = image_tag 'logo_interra.png'
-    .span2
-      %a{:href => "http://mymediacompany.ru/"}
-        = image_tag 'logo_mmc.png'
+    %h4 Информационные партнёры
+    %br
+    .span4
+      = image_tag 'http://nastachku.ru/images/logo-srit.jpg'

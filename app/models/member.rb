@@ -1,12 +1,23 @@
 class Member < ActiveRecord::Base
-  STUDY_MONTH = I18n.t('date.month_names').compact
   HOW_HEAR_ABOUT_AS_LIST = I18n.t('members.how_hear_about_as_list')
-  SCHOOLYEARS = %w(1 2 3 4 5 6)
   SKILL_LEVELS = I18n.t('skill.levels')
-  attr_accessible :state, :email, :first_name, :last_name, :patronymic, :phone, :skype, :jabber, :icq, :institute,
-    :start_year, :start_month, :finish_year, :finish_month, :department, :profession, :degree, :gpa, :web,
-    :camp_time, :camp_life, :camp_fee, :camp_notebook, :camp_training, :hobby, :sport, :state_event, :password,
-    :auth_token, :group, :how_hear_about_as, :twitter, :facebook, :vkontakte, :city, :birthday, :schoolyear_count
+
+  attr_accessible :state,             :email,
+                  :first_name,        :middle_name,       :last_name,
+                  :patronymic,        :phone,
+                  :skype,             :jabber,
+                  :icq,               :web,
+                  :camp_time,         :camp_life,
+                  :camp_fee,          :camp_notebook,
+                  :hobby,             :sport,
+                  :state_event,       :password,
+                  :how_hear_about_as, :twitter,
+                  :facebook,          :vkontakte,
+                  :city,              :birthday,
+                  :school,            :group,
+                  :auth_token,        :reason,
+                  :question
+
 
   include UsefullScopes
 
@@ -28,11 +39,16 @@ class Member < ActiveRecord::Base
   validates :email, :presence => true, :uniqueness => true, :email => true
   validates :first_name, :presence => true
   validates :last_name, :presence => true
+  validates :middle_name, presence: true,
+                          length: { maximum: 255 }
   validates :facebook, :slug => true, :allow_blank => true
   validates :twitter, :slug => true, :allow_blank => true
   validates :vkontakte, :slug => true, :allow_blank => true
   validates :city, :presence => true
-  validates :birthday, :presence => true
+  validates :birthday, :presence => true,
+                       :date => { :after => Date.new(1994, 8, 16), :before => Date.new(1999, 8, 16) }
+  validates :reason, presence: true
+  validates :question, presence: true
 
   state_machine :state, :initial => :new do
     state :new

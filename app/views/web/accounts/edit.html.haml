@@ -1,6 +1,11 @@
 = simple_form_for @member, :validate => true, :url => account_path, :html => {:class => "form-horizontal well"} do |f|
   = f.error_notification
-
+  = if @member.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@member.errors.count, "error")} ошибок найдено при попытке сохранить изменения:"
+      %ul
+        - @member.errors.full_messages.each do |msg|
+          %li= msg
   - with_options :scope => "members" do |member_t|
 
     .tabbable
@@ -22,36 +27,30 @@
               %fieldset
                 %legend= member_t.t('contact_info')
                 = f.input :first_name
+                = f.input :middle_name
                 = f.input :last_name
-                = f.input :patronymic
                 = f.input :phone, :hint => member_t.t('phone_hint')
                 = f.input :city
-                = f.input :birthday, :as => :date_picker
-                = f.input :skype
-                = f.input :jabber
-                = f.input :icq
-                -#= f.input :facebook, :hint => member_t.t('facebook_hint')
-                -#= f.input :twitter, :hint => member_t.t('twitter_hint')
-                -#= f.input :vkontakte, :hint => member_t.t('vkontakte_hint')
-                = f.input :web
+                = f.input :birthday, :start_year => 1994, :end_year => 1999
+
+
+
+
+
+
+
             .span6
               %fieldset
                 %legend= member_t.t('education')
-                = f.input :institute
-                = f.input :study_start do
-                  = f.input_field :start_month, :collection => Member::STUDY_MONTH, :include_blank => t('datetime.prompts.month'),
-                    :style => 'width: 155px'
-                  = f.input_field :start_year, :placeholder => t('datetime.prompts.year'), :class => 'span1'
-                = f.input :study_finish do
-                  = f.input_field :finish_month, :collection => Member::STUDY_MONTH, :include_blank => t('datetime.prompts.month'),
-                    :style => 'width: 155px'
-                  = f.input_field :finish_year, :placeholder => t('datetime.prompts.year'), :class => 'span1'
-                = f.input :department
-                = f.input :profession
                 = f.input :group
-                = f.input :schoolyear_count, :collection => Member::SCHOOLYEARS
-                = f.input :degree
-                = f.input :gpa
+                = f.input :school
+              %fieldset
+                %legend= member_t.t('social')
+                = f.input :skype
+                = f.input :facebook, :hint => member_t.t('facebook_hint')
+                = f.input :twitter, :hint => member_t.t('twitter_hint')
+                = f.input :vkontakte, :hint => member_t.t('vkontakte_hint')
+                = f.input :web
 
         .tab-pane#additional_educations
           %fieldset

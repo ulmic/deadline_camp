@@ -91,6 +91,9 @@ footer a:hover, footer .nav li a:hover {
 img.logo_sponsor {
   height: 100px;
 }
+img.logo_org {
+  height: 150px;
+}
 .help-block {
   font-size: 12px;
 }

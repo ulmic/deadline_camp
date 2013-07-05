@@ -1,3 +1,5 @@
+= stylesheet_link_tag 'deadline_2012'
+
 .navbar.navbar-fixed-top
   .navbar-inner
     .container
@@ -10,6 +12,7 @@
             -#= t 'base_name'
       .nav-collapse
         %ul.nav
+          = item :li, "2012", deadline2012_index_url, :class => "black-text"
           = item_page :li, program_page
           = item_page :li, place_page
         %ul.nav.pull-right

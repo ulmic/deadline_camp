@@ -6,24 +6,24 @@ ru:
           events:
             publish: "Опубликовать"
           states:
-            new: "Новый"
+            new:       "Новый"
             published: "Опубликованный"
       photo_album:
         state:
           events:
             publish: "Опубликовать"
           states:
-            new: "Новый"
+            new:       "Новый"
             published: "Опубликованный"
       member:
         state:
           events:
             accept: 'Одобрить'
-            bust: "Удалить"
+            bust:   "Удалить"
           states:
-            new: 'Новый'
+            new:      'Новый'
             accepted: 'Одобрен'
-            busted: "Удаленный"
+            busted:   "Удаленный"
     errors:
       models:
         news:
@@ -50,102 +50,98 @@ ru:
       member: 'Участник'
     attributes:
       news:
-        id: id
-        name: 'Название'
-        body: 'Содержимое'
-        uri: 'URI'
+        id:           id
+        name:         'Название'
+        body:         'Содержимое'
+        uri:          'URI'
         published_at: 'Дата публикации'
-        created_at: 'Дата создания'
-        updated_at: 'Дата обновления'
-        state: 'Текущее состояние'
-        state_event: 'Действие'
+        created_at:   'Дата создания'
+        updated_at:   'Дата обновления'
+        state:        'Текущее состояние'
+        state_event:  'Действие'
       page:
-        id: id
-        name: 'Название'
-        body: 'Содержимое'
-        uri: 'URI'
+        id:         id
+        name:       'Название'
+        body:       'Содержимое'
+        uri:        'URI'
         created_at: 'Дата создания'
         updated_at: 'Дата обновления'
       member:
-        id: 'id'
-        first_name: 'Имя'
-        last_name: 'Фамилия'
-        patronymic: 'Отчество'
-        state: 'Текущее состояние'
-        state_event: 'Действие'
-        created_at: 'Дата создания'
-        updated_at: 'Дата обновления'
-        phone: 'Телефон'
-        institute: 'ВУЗ'
-        start_year: 'Начало обучения'
-        finish_year: 'Окончание обучения'
-        department: 'Факультет'
-        profession: 'Специальность'
-        group: 'Группа'
-        degree: 'Степень'
-        gpa: 'Средний балл диплома'
-        hobby: 'Хобби'
-        sport: 'Спорт'
-        web: 'Сайт'
-        vkontakte: 'Вконтакте'
-        password: "Пароль"
-        password_confirmation: "Подтверждение пароля"
-        how_hear_about_as: "Откуда вы узнали о нас?"
-        other_how_hear_about_as: "Другое"
-        city: 'Город'
-        birthday: 'Дата рождения'
-        schoolyear_count: "Сколько курсов закончили?"
+        id:                        'id'
+        first_name:                'Фамилия'
+        middle_name:               'Имя'
+        last_name:                 'Отчество'
+        state:                     'Текущее состояние'
+        state_event:               'Действие'
+        created_at:                'Дата создания'
+        updated_at:                'Дата обновления'
+        phone:                     'Телефон'
+        group:                     'Группа / Класс'
+        school:                    'Учебное заведение'
+        hobby:                     'Хобби'
+        sport:                     'Спорт'
+        web:                       'Сайт'
+        vkontakte:                 'ВКонтакте'
+        password:                  "Пароль"
+        password_confirmation:     "Подтверждение пароля"
+        how_hear_about_as:         "Откуда вы узнали о нас?"
+        other_how_hear_about_as:   "Другое"
+        city:                      'Город'
+        reason:                    'Почему ты захотел стать программистом?'
+        question:                  'Что случится, если встретятся абсолютно непредеолимая сила и абсолютно неподвижный предмет?'
+        birthday:                  'Дата рождения'
+        schoolyear_count:          "Сколько курсов закончили?"
         # decorate translates
-        education: 'Образование'
-        s_additional_educations: 'Дополнительное образование (курсы и т.д.)'
-        s_achievements: 'Сертификаты, дипломы, достижения (в т.ч. патенты, и т.п.)'
-        s_langs: 'Иностранные языки'
-        s_skill_program_langs: 'Языки программирования'
-        s_skill_databases: 'Базы данных'
+        education:                 'Образование'
+        s_additional_educations:   'Дополнительное образование (курсы и т.д.)'
+        s_achievements:            'Сертификаты, дипломы, достижения (в т.ч. патенты, и т.п.)'
+        s_langs:                   'Иностранные языки'
+        s_skill_program_langs:     'Языки программирования'
+        s_skill_databases:         'Базы данных'
         s_skill_operation_systems: 'Операционные системы'
-        s_skill_ides: 'IDE'
-        s_skill_others: 'Другие инструменты'
-        s_jobs: 'Опыт работы программистом или ИТ-специалистом'
-        hobby: 'Хобби, увлечения'
-        s_others: 'Сертификаты, дипломы, достижения, не относящиеся к ИТ'
-        s_preferences: 'На какой из технологий вы бы предпочли разрабатывать программное обеспечение?'
-        camp_time: 'Есть ли в период с 9.07.2012 по 16.07.2012 у меня свободное время?'
-        camp_life: 'Готов ли я в период с 9.07.2012 по 16.07.2012 жить в лагере, соблюдать правила внутреннего распорядка, и выполнять представленные организаторами проекты?'
-        camp_fee: 'Готов ли я оплатить 500 рублей за участие в лагере?'
-        camp_notebook: 'Есть ли у меня ноутбук/нетбук достаточной мощности для разработки проекта?'
-        camp_training: 'Есть ли у меня время для подготовки к мероприятию самостоятельно (настройка среды разработки, установка необходимого ПО)?'
-        how_hear_about_as: 'Откуда вы узнали о нас?'
+        s_skill_ides:              'IDE'
+        s_skill_others:            'Другие инструменты'
+        s_jobs:                    'Опыт работы программистом или ИТ-специалистом'
+        hobby:                     'Хобби, увлечения'
+        s_others:                  'Сертификаты, дипломы, достижения, не относящиеся к ИТ'
+        s_preferences:             'На какой из технологий вы бы предпочли разрабатывать программное обеспечение?'
+        camp_time:                 'Есть ли в период с 9.07.2012 по 16.07.2012 у меня свободное время?'
+        camp_life:                 'Готов ли я в период с 9.07.2012 по 16.07.2012 жить в лагере, соблюдать правила внутреннего распорядка, и выполнять представленные организаторами проекты?'
+        camp_fee:                  'Готов ли я оплатить 500 рублей за участие в лагере?'
+        camp_notebook:             'Есть ли у меня ноутбук/нетбук достаточной мощности для разработки проекта?'
+        camp_training:             'Есть ли у меня время для подготовки к мероприятию самостоятельно (настройка среды разработки, установка необходимого ПО)?'
+        how_hear_about_as:         'Откуда вы узнали о нас?'
 
       'member/skill_os':
-        level: 'Уровень'
-        duration: 'Сколько лет/месяцев используете'
+        level:       'Уровень'
+        duration:    'Сколько лет/месяцев используете'
         description: 'Комментарии'
       'member/skill_database':
-        level: 'Уровень'
-        duration: 'Сколько лет/месяцев используете'
+        level:       'Уровень'
+        duration:    'Сколько лет/месяцев используете'
         description: 'Комментарии'
       'member/skill_ide':
-        level: 'Уровень'
-        duration: 'Сколько лет/месяцев используете'
+        level:       'Уровень'
+        duration:    'Сколько лет/месяцев используете'
         description: 'Комментарии'
       'member/skill_program_lang':
-        level: 'Уровень'
-        duration: 'Сколько лет/месяцев используете'
+        level:       'Уровень'
+        duration:    'Сколько лет/месяцев используете'
         description: 'Комментарии'
       'member/skill_other':
-        level: 'Уровень'
-        duration: 'Сколько лет/месяцев используете'
+        level:       'Уровень'
+        duration:    'Сколько лет/месяцев используете'
         description: 'Где и как использовали: проекты, достижения, технологии'
       'member/lang':
         language: 'Язык'
-        level: 'Уровень'
+        level:    'Уровень'
       'member/job':
-        company: 'Название компании'
-        started_at: 'Дата начала работы'
-        finished_at: 'Дата окончания работы'
-        job: 'Должность'
+        company:        'Название компании'
+        started_at:     'Дата начала работы'
+        finished_at:    'Дата окончания работы'
+        job:            'Должность'
         responsibility: 'Обязанности'
-        achievements: 'Достижения'
+        achievements:   'Достижения'
       'member/additional_education':
         description: 'Название курсов, год прохождения'
       'member/achievement':
@@ -153,13 +149,13 @@ ru:
       'member/other':
         description: 'Название, год получения'
       photo_album:
-        name: "Название альбома"
-        state: 'Текущее состояние'
-        state_event: "Действие"
+        name:              "Название альбома"
+        state:             'Текущее состояние'
+        state_event:       "Действие"
         mass_photo_loader: "Массовая загрузка фото"
-        description: "Описание"
+        description:       "Описание"
       'photo_album/photo':
-        name: "Название фото"
-        image: 'Фото'
+        name:        "Название фото"
+        image:       'Фото'
         description: "Описание"
-        main: 'Главная'
+        main:        'Главная'
