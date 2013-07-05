@@ -1,5 +1,13 @@
 class News < ActiveRecord::Base
-  attr_accessible :body, :name, :published_at, :uri, :state, :state_event
+  attr_accessible :body,
+                  :name,
+                  :published_at,
+                  :uri,
+                  :state,
+                  :state_event,
+                  :photo
+
+  mount_uploader :photo, News::PhotoUploader
 
   include UsefullScopes
 

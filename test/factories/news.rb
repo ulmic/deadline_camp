@@ -6,6 +6,7 @@ FactoryGirl.define do
     uri
     body { generate :description }
     published_at { Time.current }
+    photo { generate :file }
 
     trait :published do
       after(:create) do |news|

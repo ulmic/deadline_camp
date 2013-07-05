@@ -639,7 +639,8 @@ CREATE TABLE news (
     published_at timestamp without time zone,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
-    state character varying(255)
+    state character varying(255),
+    photo text
 );
 
 
@@ -1410,3 +1411,5 @@ INSERT INTO schema_migrations (version) VALUES ('20130704212116');
 INSERT INTO schema_migrations (version) VALUES ('20130704213916');
 
 INSERT INTO schema_migrations (version) VALUES ('20130704215419');
+
+INSERT INTO schema_migrations (version) VALUES ('20130705094417');

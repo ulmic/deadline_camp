@@ -34,4 +34,8 @@ FactoryGirl.define do
   sequence :uri do |n|
     "uri-#{n}"
   end
+
+  sequence :file do |n|
+    fixture_file_upload('photos/test.png', 'image/png')
+  end
 end
