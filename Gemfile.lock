@@ -264,7 +264,7 @@ DEPENDENCIES
   capistrano
   capistrano-ext
   capistrano_colors
-  carrierwave
+  carrierwave (~> 0.8.0)
   ci_reporter
   ckeditor
   client_side_validations

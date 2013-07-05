@@ -1,6 +1,7 @@
 = javascript_include_tag  "jquery-1.10.1.min.js"
 = stylesheet_link_tag 'fotorama'
 = javascript_include_tag 'fotorama'
+= stylesheet_link_tag 'admin/news'
 
 .row.landing_top
   .span6
@@ -39,15 +40,17 @@
     .row.landing_lower
       .span9
         - if @news.any?
-          %h3 Новости
+          %h3 Новости Deadline 2013
           - @news.each do |n|
             .well
+              - if n.photo.present?
+                = image_tag n.photo.thumb
               %a.b-news{:href => news_path(n)}
                 %h4= n.name
               - if n.published_at?
                 .help-block= l n.published_at, :format => :news
               != truncate_sanitize_rem_br n.body, 250
-          .news_link= link_to "Все новости", news_index_path
+          .news_link= link_to "Все новости", news_index_path, :class => 'btn'
       .span3
         = render 'layouts/shared/twitter_widget'
 

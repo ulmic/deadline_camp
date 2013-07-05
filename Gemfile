@@ -13,7 +13,7 @@ gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
 gem 'configus'
 gem 'state_machine'
-gem "carrierwave"
+gem "carrierwave", '~> 0.8.0'
 gem "mini_magick"
 gem 'russian'
 gem 'kaminari'

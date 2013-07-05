@@ -3,6 +3,6 @@
 = f.input :uri
 = f.input :published_at
 = f.input :body, :as => :ckeditor, :input_html => {:width => 800, :height => 400, :toolbar => 'Easy'}
-
+= f.file_field :photo
 .form-actions
   = f.button :submit
