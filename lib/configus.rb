@@ -2,7 +2,7 @@
 Configus.build Rails.env do
   env :production do
     mailer do
-      default_from "notreplay@deadline-camp.ru"
+      default_from "kalashnikovisme@gmail.ru"
       default_url "deadline-camp.ru"
     end
     mail do

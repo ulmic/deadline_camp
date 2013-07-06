@@ -50,6 +50,10 @@ module AuthHelper
     redirect_to new_session_path unless member_signed_in?
   end
 
+  def authenticate_member?(member, password)
+    member.password === password
+  end
+
   def current_member
     @current_member ||= Member.find(session[:member_id])
   end

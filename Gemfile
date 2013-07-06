@@ -76,5 +76,9 @@ group :test do
   gem 'coveralls', require: false
 end
 
+group :production do
+  gem 'sqlite3'
+end
+
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'

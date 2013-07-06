@@ -2,6 +2,7 @@ DeadlineCamp::Application.routes.draw do
 
   match "/404", :to => "web/errors#not_found"
   match "/500", :to => "web/errors#internal_server_error"
+  delete "session_destroy", :to => "web/session#destroy"
 
   mount Ckeditor::Engine => '/ckeditor'
 
@@ -22,7 +23,12 @@ DeadlineCamp::Application.routes.draw do
       resource :session, :only => [:new, :create, :destroy]
     end
 
-    resources :members, :only => [:index, :new, :create]
+    resources :members, :only => [:index, :new, :create] do
+      collection  do
+        post "login"
+        get "logout" => "members#logout"
+      end
+    end
     resource :session, :only => [:new, :create, :destroy]
     resource :account, :only => [:show, :edit, :update] do
       scope :module => :account do
@@ -33,6 +39,6 @@ DeadlineCamp::Application.routes.draw do
     resources :pages, :only => [:show]
     resources :news, :only => [:index, :show]
     resources :photo_albums, :only => [:index]
-    resources :deadline2012, :except => [:show, :new, :edit, :destroy, :update], :controller => "deadline2012"
+    resources :deadline2012, :except => [:show, :new, :edit, :destroy, :update]
   end
 end
