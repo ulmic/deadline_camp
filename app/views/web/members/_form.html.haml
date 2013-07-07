@@ -33,6 +33,18 @@
     %fieldset
       %legend= member_t.t 'good_questions'
       .field
+        = f.label :how_long_programming
+        %br
+        = f.text_area :how_long_programming, :row => 5, :class => :span6
+      .field
+        = f.label :what_you_want
+        %br
+        = f.text_area :what_you_want, :row => 5, :class => :span6
+      .field
+        = f.label :what_you_tried
+        %br
+        = f.text_area :what_you_tried, :row => 5, :class => :span6
+      .field
         = f.label :reason
         %br
         = f.text_area :reason, :row => 5, :class => :span6

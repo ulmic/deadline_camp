@@ -16,7 +16,8 @@ class Member < ActiveRecord::Base
                   :city,              :birthday,
                   :school,            :group,
                   :auth_token,        :reason,
-                  :question
+                  :question,          :how_long_programming,
+                  :what_you_want,     :what_you_tried
 
 
   include UsefullScopes
@@ -49,6 +50,9 @@ class Member < ActiveRecord::Base
                        :date => { :after => Date.new(1994, 8, 16), :before => Date.new(1999, 8, 16) }
   validates :reason, presence: true
   validates :question, presence: true
+  validates :what_you_tried, presence: true
+  validates :what_you_want, presence: true
+  validates :how_long_programming, presence: true
 
   state_machine :state, :initial => :new do
     state :new
