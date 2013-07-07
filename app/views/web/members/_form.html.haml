@@ -14,6 +14,8 @@
           = f.input :last_name
           = f.input :phone, :hint => member_t.t('phone_hint')
           = f.input :city
+          %p{ :align => :center }
+            %span.label.label-warning от 14 до 18 лет включительно!
           = f.input :birthday, :start_year => 1994, :end_year => 1999
           = f.input :email
           = f.input :password
