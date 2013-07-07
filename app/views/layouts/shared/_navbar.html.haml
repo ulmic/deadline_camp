@@ -17,8 +17,9 @@
           -#= item_page :li, place_page
         %ul.nav.pull-right
           - if member_signed_in?
-            %li{ :href => edit_account_path }
-              = t('.my_account')
+            %li
+              %a{ :href => edit_account_path }
+                = t('.my_account')
             %li
               %a{ :href => logout_members_path }
                 = t('.sign_out')
