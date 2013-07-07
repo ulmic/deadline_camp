@@ -1,7 +1,6 @@
 # Deadline-camp
 [![Build
 Status](https://secure.travis-ci.org/ulmic/deadline_camp.png)](http://travis-ci.org/ulmic/deadline_camp)
-
 [![Code Climate](https://codeclimate.com/github/ulmic/deadline_camp.png)](https://codeclimate.com/github/ulmic/deadline_camp)
 [![Coverage Status](https://coveralls.io/repos/ulmic/deadline_camp/badge.png?branch=master)](https://coveralls.io/r/ulmic/deadline_camp?branch=master)
 
