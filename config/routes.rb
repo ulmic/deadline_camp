@@ -24,7 +24,9 @@ DeadlineCamp::Application.routes.draw do
 
     resources :members, :only => [:index, :new, :create] do
       collection  do
+        #FIXME
         post "login"
+        get "login"
         get "logout" => "members#logout"
       end
     end
