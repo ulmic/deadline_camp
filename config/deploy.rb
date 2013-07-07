@@ -1,5 +1,5 @@
 set :stages, %w(production staging)
-set :default_stage, "staging"
+set :default_stage, "production"
 
 require 'capistrano/ext/multistage'
 require 'capi/unicorn'
@@ -8,7 +8,7 @@ set :application, "deadline_camp"
 set :rvm_type, :system
 
 set :scm, :git
-set :repository,  "git://github.com/kaize/deadline_camp.git"
+set :repository,  "git://github.com/ulmic/deadline_camp.git"
 
 set :use_sudo, false
 set :ssh_options, :forward_agent => true

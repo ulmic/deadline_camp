@@ -3,7 +3,7 @@ set :branch do
   raise "Use tags: TAG=v2" unless ENV['TAG']
   ENV['TAG']
 end
-set :user, 'deadline_camp_production'
+set :user, 'user'
 set :keep_releases, 15
 
 role :web, "62.76.191.134"

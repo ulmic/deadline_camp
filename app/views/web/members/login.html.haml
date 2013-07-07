@@ -1,0 +1,20 @@
+.row
+  .span4.offset3.well
+    %h2= t('.authenticate')
+    = form_tag do
+      = t('.email')
+      %br
+      = text_field_tag :email, params[:email], :class => "span4"
+      %br
+      = t('.password')
+      %br
+      = password_field_tag :password, params[:password], :class => "span4"
+      %br
+      = submit_tag t('.enter'), :class => "btn btn-success"
+
+
+
+
+
+
+

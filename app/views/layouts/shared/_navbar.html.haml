@@ -17,9 +17,8 @@
           -#= item_page :li, place_page
         %ul.nav.pull-right
           - if member_signed_in?
-            = item :li, t('.my_account'), edit_account_path
-
-            -#= item :li, t('.logout'), session_destroy_path, method: :delete
+            %li{ :href => edit_account_path }
+              = t('.my_account')
             %li
               %a{ :href => logout_members_path }
                 = t('.sign_out')
@@ -27,4 +26,4 @@
             - if can_registred?
               = item :li, t('.new_member'), new_member_path
               %li.divider-vertical
-            = item :li, t('.login'), new_session_path
+            = item :li, t('.login'), login_members_path

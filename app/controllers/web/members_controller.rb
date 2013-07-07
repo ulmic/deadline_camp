@@ -27,9 +27,9 @@ class Web::MembersController < Web::ApplicationController
   def login
     @member = Member.new
     if member_signed_in?
-      redirect_to member_path(@member)
+      redirect_to member_path @member
     else
-      @member = Admin.find_by_login(params[:login])
+      @member = Member.find_by_email params[:email]
       if @member && authenticate_member?(@member, params[:password])
         member_sign_in @member
         redirect_to member_path @member
