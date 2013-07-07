@@ -19,7 +19,6 @@ DeadlineCamp::Application.routes.draw do
       resources :pages
       resources :news
       resources :photo_albums
-      resource :session, :only => [:new, :create, :destroy]
     end
 
     resources :members, :only => [:index, :new, :create] do
@@ -37,6 +36,10 @@ DeadlineCamp::Application.routes.draw do
     resources :pages, :only => [:show]
     resources :news, :only => [:index, :show]
     resources :photo_albums, :only => [:index]
-    resources :deadline2012, :except => [:show, :new, :edit, :destroy, :update]
+    resources :first_deadline, :only => [:index] do
+      collection do
+        get :news
+      end
+    end
   end
 end

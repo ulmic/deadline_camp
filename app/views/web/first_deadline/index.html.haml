@@ -7,3 +7,14 @@
           - @album.shuffle_photos.each do |photo|
             = image_tag photo.image_url, "data-caption" => photo.name
       %p= link_to "Все фотоальбомы", photo_albums_path
+  .span6
+  - if @news.any?
+    %h3 Новости Deadline 2013
+    - @news.each do |n|
+      .well
+        %a.b-news{:href => news_path(n)}
+          %h4= n.name
+        - if n.published_at?
+          .help-block= l n.published_at, :format => :news
+        != truncate_sanitize_rem_br n.body, 250
+    .news_link= link_to "Все новости про Deadline 2012", news_first_deadline_index_path, :class => 'btn'
