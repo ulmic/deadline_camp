@@ -9,7 +9,7 @@
       %p= link_to "Все фотоальбомы", photo_albums_path
   .span6
   - if @news.any?
-    %h3 Новости Deadline 2013
+    %h3 Новости Deadline 2012
     - @news.each do |n|
       .well
         %a.b-news{:href => news_path(n)}
