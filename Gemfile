@@ -17,7 +17,7 @@ gem "carrierwave", '~> 0.8.0'
 gem "mini_magick"
 gem 'russian'
 gem 'kaminari'
-gem 'cocoon'
+gem 'cocoon', :git => 'git://github.com/nathanvda/cocoon'
 gem 'capi'
 gem 'airbrake'
 gem 'simple_form'
@@ -25,7 +25,7 @@ gem "backup", "> 3.0.24"
 gem 'whenever'
 gem 'usefull_scopes'
 gem 'to_xls'
-gem "draper", "~> 0.18.0"
+gem "draper"
 gem "gon"
 gem 'date_validator'
 
@@ -36,9 +36,10 @@ group :assets do
   gem 'sass-rails'
   gem 'less-rails'
   gem 'coffee-rails'
-  gem 'libv8'
+
+  gem 'libv8', '3.11.8.3'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platform => :ruby
+  gem 'therubyracer', '0.11.0beta5', :platform => :ruby, :require => 'v8'
 
   gem 'uglifier'
 end
@@ -54,7 +55,7 @@ gem 'unicorn'
 gem 'client_side_validations'
 gem 'validates'
 gem 'meta_search'
-gem 'cocoon'
+#gem 'cocoon'
 
 group :development do
   # Deploy with Capistrano
