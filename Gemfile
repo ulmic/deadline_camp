@@ -36,7 +36,7 @@ group :assets do
   gem 'sass-rails'
   gem 'less-rails'
   gem 'coffee-rails'
-
+  gem 'libv8'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platform => :ruby
 

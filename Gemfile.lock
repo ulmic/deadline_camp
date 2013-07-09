@@ -281,6 +281,7 @@ DEPENDENCIES
   jquery-ui-rails
   kaminari
   less-rails
+  libv8
   meta_search
   mini_magick
   minitest
