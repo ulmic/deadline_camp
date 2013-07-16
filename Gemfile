@@ -7,7 +7,7 @@ gem 'rails', '~> 3.2.0'
 
 gem 'pg'
 
-gem 'jquery-rails'
+gem 'jquery-rails', '2.3.0'
 gem "ckeditor"
 gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
