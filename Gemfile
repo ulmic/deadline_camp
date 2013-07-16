@@ -25,7 +25,7 @@ gem "backup", "> 3.0.24"
 gem 'whenever'
 gem 'usefull_scopes'
 gem 'to_xls'
-gem "draper"
+gem "draper", '~> 0.18.0'
 gem "gon"
 gem 'date_validator'
 

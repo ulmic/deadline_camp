@@ -1,2 +1,2 @@
-class Member::SkillOtherDecorator < Draper::Decorator
+class Member::SkillOtherDecorator < Draper::Base
 end

@@ -85,10 +85,9 @@ GEM
       thor
     date_validator (0.7.0)
       activemodel (>= 3)
-    draper (1.2.1)
-      actionpack (>= 3.0)
-      activesupport (>= 3.0)
-      request_store (~> 1.0.3)
+    draper (0.18.0)
+      actionpack (~> 3.2)
+      activesupport (~> 3.2)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -184,7 +183,6 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.5)
-    request_store (1.0.5)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     ruby-ole (1.2.11.7)
@@ -272,7 +270,7 @@ DEPENDENCIES
   configus
   coveralls
   date_validator
-  draper
+  draper (~> 0.18.0)
   factory_girl_rails
   gon
   haml-rails
