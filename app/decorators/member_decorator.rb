@@ -1,4 +1,4 @@
-class MemberDecorator < Draper::Base
+class MemberDecorator < Draper::Decorator
   decorates :member
   decorates_associations :skill_databases, :skill_databases, :skill_ides, :skill_operation_systems,
     :skill_others, :skill_program_langs

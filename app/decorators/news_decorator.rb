@@ -1,4 +1,4 @@
-class NewsDecorator < Draper::Base
+class NewsDecorator < Draper::Decorator
   decorates :news
 
   def self.published_at_year(year)

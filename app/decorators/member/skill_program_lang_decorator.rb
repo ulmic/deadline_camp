@@ -1,2 +1,2 @@
-class Member::SkillProgramLangDecorator < Draper::Base
+class Member::SkillProgramLangDecorator < Draper::Decorator
 end

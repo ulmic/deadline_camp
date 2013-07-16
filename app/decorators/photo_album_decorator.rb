@@ -1,4 +1,4 @@
-class PhotoAlbumDecorator < Draper::Base
+class PhotoAlbumDecorator < Draper::Decorator
   decorates :photo_album
 
   # Accessing Helpers
