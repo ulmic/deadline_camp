@@ -10,7 +10,7 @@ config/database.yml
 test/reports/*
 coverage/**
 public/system/**
-
+public/assets/*
 .idea
 .DS_Store
 public/uploads
