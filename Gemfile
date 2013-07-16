@@ -17,7 +17,7 @@ gem "carrierwave", '~> 0.8.0'
 gem "mini_magick"
 gem 'russian'
 gem 'kaminari'
-gem 'cocoon', :git => 'git://github.com/nathanvda/cocoon'
+gem 'cocoon'
 gem 'capi'
 gem 'airbrake'
 gem 'simple_form'
@@ -37,15 +37,13 @@ group :assets do
   gem 'less-rails'
   gem 'coffee-rails'
 
-  gem 'libv8', '3.11.8.3'
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', '0.11.0beta5', :platform => :ruby, :require => 'v8'
+  gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier'
 end
 
 # To use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
