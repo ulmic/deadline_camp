@@ -7,13 +7,10 @@
   .span6
     %h2 16 - 21 августа 2013 года
     %h3 Выездной обучающий семинар для молодёжи, которая хочет работать в сфере ИТ, в частности, заниматься разработкой программных продуктов. Участники в течение нескольких дней будут работать над продуктом.
-    -# if member_signed_in?
-    -# %a.btn.btn-success.btn-large{:href => page_path(program_page) }
-    -#  %i.icon-chevron-right
-    -#    = program_page
-    -#  %a.btn.btn-primary.btn-large{:href => edit_account_path }
-    -#    %i.icon-chevron-right
-    -#      Профиль
+    - if member_signed_in?
+      %a.btn.btn-primary.btn-large{:href => edit_account_path }
+        %i.icon-chevron-right
+          Профиль
     - unless member_signed_in?
       - if can_registred?
         %a.btn.btn-success.btn-large{ :href => new_member_path }
@@ -23,7 +20,8 @@
         %i.icon-chevron-right
           Вход
   .span6
-    %h4 Deadline 2012
+    %a{ href: first_deadline_index_path }
+      %h4 Deadline 2012
   - if @photo_album.model && @photo_album.photos.any?
     .row
       .span6
@@ -39,7 +37,7 @@
     .row.landing_lower
       .span9
         - if @news.any?
-          %h3 Новости Deadline 2013
+          %h3 Новости Лесной школы ИТ 2013
           - @news.each do |n|
             .well
               - if n.photo.present?
