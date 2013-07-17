@@ -105,6 +105,11 @@ ru:
       form:
         already_have_account: "Я уже зарегистрирован"
         terms_of_service:     'Я согласен на обработку персональных данных'
+      login:
+        authenticate:       'Авторизация'
+        password:           'Пароль'
+        enter:              'Войти'
+        wrong_login:        'Неправильный логин или пароль'
     admin:
       pages:
         index:
@@ -117,6 +122,8 @@ ru:
           preference:         "Предпочтения"
           download_xls:       "Скачать базу участников (полная)"
           download_short_xls: "Скачать базу участников (только контактные данные)"
+
+
     remind_passwords:
       new:
         password_remind: 'Напомнить пароль'
