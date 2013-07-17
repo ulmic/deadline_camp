@@ -8,6 +8,8 @@ ru:
         members:
           create:
             success: '<b>Регистрация прошла успешно.</b>'
+          login:
+            wrong_login: 'Неправильный логин или пароль'
         accounts:
           update:
             success: 'Анкета отредактирована.'
