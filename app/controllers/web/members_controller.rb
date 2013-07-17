@@ -14,7 +14,7 @@ class Web::MembersController < Web::ApplicationController
 
     if @member.save
       member_d = MemberDecorator.new(@member)
-      MemberMailer.welcome(member_d).deliver
+      #MemberMailer.welcome(member_d).deliver
 
       member_sign_in(@member)
       flash[:success] = flash_translate(:success).html_safe
@@ -23,4 +23,25 @@ class Web::MembersController < Web::ApplicationController
       render :action => :new
     end
   end
+
+  def login
+    @member = Member.new
+    if member_signed_in?
+      redirect_to member_path @member
+    else
+      @member = Member.find_by_email params[:email]
+      if @member && authenticate_member?(@member, params[:password])
+        member_sign_in @member
+        redirect_to member_path @member
+      else
+        flash[:notice] = t 'wrong_login'
+      end
+    end
+  end
+
+  def logout
+    member_sign_out
+    redirect_to :root
+  end
+
 end

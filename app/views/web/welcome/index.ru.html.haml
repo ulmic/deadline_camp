@@ -7,22 +7,21 @@
   .span6
     %h2 16 - 21 августа 2013 года
     %h3 Выездной обучающий семинар для молодёжи, которая хочет работать в сфере ИТ, в частности, заниматься разработкой программных продуктов. Участники в течение нескольких дней будут работать над продуктом.
-    - if member_signed_in?
-      %a.btn.btn-success.btn-large{:href => page_path(program_page) }
-        %i.icon-chevron-right
-        = program_page
-      %a.btn.btn-primary.btn-large{:href => edit_account_path }
-        %i.icon-chevron-right
-          Профиль
-    - else
+    -# if member_signed_in?
+    -# %a.btn.btn-success.btn-large{:href => page_path(program_page) }
+    -#  %i.icon-chevron-right
+    -#    = program_page
+    -#  %a.btn.btn-primary.btn-large{:href => edit_account_path }
+    -#    %i.icon-chevron-right
+    -#      Профиль
+    - unless member_signed_in?
       - if can_registred?
-        %a.btn.btn-success.btn-large{:href => new_member_path}
+        %a.btn.btn-success.btn-large{ :href => new_member_path }
           %i.icon-chevron-right
           Регистрация
-      %a.btn.btn-primary.btn-large{:href => new_session_path}
+      %a.btn.btn-primary.btn-large{ :href => login_members_path }
         %i.icon-chevron-right
           Вход
-
   .span6
     %h4 Deadline 2012
   - if @photo_album.model && @photo_album.photos.any?

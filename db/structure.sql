@@ -601,10 +601,12 @@ CREATE TABLE members (
     vkontakte character varying(255),
     city character varying(255),
     birthday date,
-    photo character varying(255),
     middle_name character varying(255),
     reason text,
-    question text
+    question text,
+    how_long_programming text,
+    what_you_want text,
+    what_you_tried text
 );
 
 
@@ -1400,8 +1402,6 @@ INSERT INTO schema_migrations (version) VALUES ('20130704160253');
 
 INSERT INTO schema_migrations (version) VALUES ('20130704160824');
 
-INSERT INTO schema_migrations (version) VALUES ('20130704181556');
-
 INSERT INTO schema_migrations (version) VALUES ('20130704192457');
 
 INSERT INTO schema_migrations (version) VALUES ('20130704211054');
@@ -1413,3 +1413,5 @@ INSERT INTO schema_migrations (version) VALUES ('20130704213916');
 INSERT INTO schema_migrations (version) VALUES ('20130704215419');
 
 INSERT INTO schema_migrations (version) VALUES ('20130705094417');
+
+INSERT INTO schema_migrations (version) VALUES ('20130707173544');

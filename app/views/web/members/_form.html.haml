@@ -14,6 +14,8 @@
           = f.input :last_name
           = f.input :phone, :hint => member_t.t('phone_hint')
           = f.input :city
+          %p{ :align => :center }
+            %span.label.label-warning от 14 до 18 лет включительно!
           = f.input :birthday, :start_year => 1994, :end_year => 1999
           = f.input :email
           = f.input :password
@@ -32,6 +34,18 @@
           = f.input :web
     %fieldset
       %legend= member_t.t 'good_questions'
+      .field
+        = f.label :how_long_programming
+        %br
+        = f.text_area :how_long_programming, :row => 5, :class => :span6
+      .field
+        = f.label :what_you_want
+        %br
+        = f.text_area :what_you_want, :row => 5, :class => :span6
+      .field
+        = f.label :what_you_tried
+        %br
+        = f.text_area :what_you_tried, :row => 5, :class => :span6
       .field
         = f.label :reason
         %br
@@ -62,4 +76,4 @@
 
     .form-actions
       = f.button :submit, :class => 'btn btn-primary'
-      = link_to t('.already_have_account'), new_session_path
+      = link_to t('.already_have_account'), login_members_path

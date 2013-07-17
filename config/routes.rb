@@ -22,8 +22,14 @@ DeadlineCamp::Application.routes.draw do
       resource :session, :only => [:new, :create, :destroy]
     end
 
-    resources :members, :only => [:index, :new, :create]
-    resource :session, :only => [:new, :create, :destroy]
+    resources :members, :only => [:index, :new, :create] do
+      collection  do
+        #FIXME
+        post "login"
+        get "login"
+        get "logout" => "members#logout"
+      end
+    end
     resource :account, :only => [:show, :edit, :update] do
       scope :module => :account do
         resource :password, :only => [:edit, :update]
@@ -33,6 +39,10 @@ DeadlineCamp::Application.routes.draw do
     resources :pages, :only => [:show]
     resources :news, :only => [:index, :show]
     resources :photo_albums, :only => [:index]
-    resources :deadline2012, :except => [:show, :new, :edit, :destroy, :update], :controller => "deadline2012"
+    resources :first_deadline, :only => [:index] do
+      collection do
+        get :news
+      end
+    end
   end
 end

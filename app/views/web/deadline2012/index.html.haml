@@ -1,9 +1,0 @@
-.row
-  .span6
-  - if @album.model && @album.photos.any?
-    .row
-      .span6
-        .fotorama{ "data-transition" => "crossfade", "data-autoplay" => "true", "data-loop" => "true", "data-width" => "500px","data-ratio" => "1200/900" }
-          - @album.shuffle_photos.each do |photo|
-            = image_tag photo.image_url, "data-caption" => photo.name
-      %p= link_to "Все фотоальбомы", photo_albums_path

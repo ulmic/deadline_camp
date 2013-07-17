@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'rails'
+gem 'rails', '~> 3.2.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
 
-gem 'jquery-rails'
+gem 'jquery-rails', '2.3.0'
 gem "ckeditor"
 gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
@@ -25,7 +25,7 @@ gem "backup", "> 3.0.24"
 gem 'whenever'
 gem 'usefull_scopes'
 gem 'to_xls'
-gem "draper", "~> 0.18.0"
+gem "draper", '~> 0.18.0'
 gem "gon"
 gem 'date_validator'
 
@@ -37,14 +37,13 @@ group :assets do
   gem 'less-rails'
   gem 'coffee-rails'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier'
 end
 
 # To use ActiveModel has_secure_password
-gem 'bcrypt-ruby'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
@@ -54,7 +53,7 @@ gem 'unicorn'
 gem 'client_side_validations'
 gem 'validates'
 gem 'meta_search'
-gem 'cocoon'
+#gem 'cocoon'
 
 group :development do
   # Deploy with Capistrano
@@ -75,6 +74,3 @@ group :test do
   gem 'tconsole'
   gem 'coveralls', require: false
 end
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'

@@ -2,7 +2,25 @@ require 'test_helper'
 
 class Web::MembersControllerTest < ActionController::TestCase
   setup do
-    #@member = create :member, :with_full_profile
+    @member = create :member, :with_full_profile
+  end
+
+  test "should sign_in member" do
+    attributes = { email: @member.email, password: @member.password }
+    post :login, attributes
+    #FIXME
+    assert_response :success
+  end
+
+  test "should sign_out member" do
+    post :logout
+    assert_equal nil, session[:member_id]
+  end
+
+  test "should not sign in member" do
+    attributes = attributes_for :member
+    post :login, attributes
+    assert_response :success
   end
 
   test "should get index" do
