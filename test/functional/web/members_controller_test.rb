@@ -20,7 +20,7 @@ class Web::MembersControllerTest < ActionController::TestCase
   test "should not sign in member" do
     attributes = attributes_for :member
     post :login, attributes
-    assert_response :success
+    assert_response :redirect
   end
 
   test "should get index" do
