@@ -3,7 +3,7 @@ class Web::FirstDeadlineController < Web::ApplicationController
     @album = PhotoAlbumDecorator.decorate PhotoAlbum.welcome_album
     @news = News.published_at_year(2012).last 5
 
-    title t('.dealine_2012')
+    title t('deadline_2012')
   end
 
   def news
