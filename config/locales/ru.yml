@@ -22,6 +22,7 @@ ru:
   sure: 'Вы уверены?'
   new:  'Новый'
   add:  "Добавить"
+  wrong_login:  Неверный логин или пароль
   registration: Регистрация
   deadline_2012: Deadline 2012
   views:
