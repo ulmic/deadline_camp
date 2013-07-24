@@ -9,7 +9,7 @@ class Web::MembersControllerTest < ActionController::TestCase
     attributes = { email: @member.email, password: @member.password }
     post :login, attributes
     #FIXME
-    assert_response :success
+    assert_response :redirect
   end
 
   test "should sign_out member" do
