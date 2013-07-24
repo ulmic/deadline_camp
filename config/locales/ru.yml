@@ -1,5 +1,5 @@
 ru:
-  base_name: 'Смена Deadline'
+  base_name: Лесная школа ИТ
   language:
     levels:
       - базовые знания
@@ -23,6 +23,7 @@ ru:
   new:  'Новый'
   add:  "Добавить"
   registration: Регистрация
+  deadline_2012: Deadline 2012
   views:
     pagination:
       first:    "&laquo; First"
