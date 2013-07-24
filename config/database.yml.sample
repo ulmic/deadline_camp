@@ -30,5 +30,6 @@ production:
   database: deadline_camp_production
   pool: 1
   timeout: 5000
+  template: template0
   username: deadline_camp_production
   password: mIKBzvbllRvwJObaSTkeg

@@ -30,9 +30,9 @@ class Web::MembersController < Web::ApplicationController
       redirect_to member_path @member
     else
       @member = Member.find_by_email params[:email]
-      if @member && authenticate_member?(@member, params[:password])
+      if @member && @member.authenticate(params[:password])
         member_sign_in @member
-        redirect_to member_path @member
+        redirect_to :root
       else
         flash[:notice] = t 'wrong_login'
       end

@@ -46,7 +46,7 @@ DeadlineCamp::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += ['admin/application.js', 'admin/application.css']
+  config.assets.precompile += ['admin/application.js', 'admin/application.css', 'fotorama.css', 'fotorama.js', 'jquery-1.10.1.min.js']
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
@@ -58,7 +58,7 @@ DeadlineCamp::Application.configure do
     #:user_name            => '<username>',
     #:password             => '<password>',
     #:authentication       => 'plain',
-    #:enable_starttls_auto => true  
+    #:enable_starttls_auto => true
   }
 
   # Enable threaded mode
