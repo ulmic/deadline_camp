@@ -57,4 +57,8 @@ module AuthHelper
   def current_member
     @current_member ||= Member.find(session[:member_id])
   end
+
+  def members_count
+    Member.count
+  end
 end
