@@ -13,6 +13,8 @@
         %ul.nav
           = item :li, "2012", first_deadline_index_url, :class => "black-text"
         %ul.nav.pull-right
+          %li
+            = members_count
           - if member_signed_in?
             %li
               %a{ :href => edit_account_path }
