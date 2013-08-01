@@ -45,11 +45,12 @@ ru:
   layouts:
     shared:
       navbar:
-        new_member: 'Подать заявку'
-        my_account: 'Мой профиль'
-        login:      'Вход'
+        new_member:                 'Подать заявку'
+        my_account:                 'Мой профиль'
+        login:                      'Вход'
         already_filed_applications: 'Уже подано заявок:'
-        logout:     'Выход'
+        logout:                     'Выход'
+        space_is_limited:           'Количество мест ограничено!'
       footer:
         np:                  Некоммерческое Партнерство "Содействия развития ИТ"
         np_short:            НП "Содействия развития ИТ"

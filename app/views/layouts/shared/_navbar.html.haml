@@ -15,6 +15,10 @@
         %ul.nav.pull-right
           %li
             %a
+              %span.label.label-important
+                = t('.space_is_limited')
+          %li
+            %a
               = t('.already_filed_applications')
               = members_count
           - if member_signed_in?
