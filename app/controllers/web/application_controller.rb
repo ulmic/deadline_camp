@@ -1,4 +1,5 @@
 class Web::ApplicationController < ApplicationController
+  include RegistrHelper
   include AuthHelper
   include FlashHelper
 
