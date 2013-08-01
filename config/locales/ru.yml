@@ -48,6 +48,7 @@ ru:
         new_member: 'Подать заявку'
         my_account: 'Мой профиль'
         login:      'Вход'
+        already_filed_applications: 'Уже подано заявок:'
         logout:     'Выход'
       footer:
         np:                  Некоммерческое Партнерство "Содействия развития ИТ"
