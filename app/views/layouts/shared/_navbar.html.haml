@@ -7,11 +7,11 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-          %a.brand{ :href => root_path }
-            = image_tag 'deadline_logo.png', :id => "topbar_logo"
+          %a.brand{ href: root_path }
+            = image_tag 'deadline_logo.png', id: "topbar_logo"
       .nav-collapse
         %ul.nav
-          = item :li, "2012", first_deadline_index_url, :class => "black-text"
+          = item :li, "2012", first_deadline_index_url, class: "black-text"
         %ul.nav.pull-right
           %li
             %a
@@ -19,10 +19,10 @@
               = members_count
           - if member_signed_in?
             %li
-              %a{ :href => edit_account_path }
+              %a{ href: edit_account_path }
                 = t('.my_account')
             %li
-              %a{ :href => logout_members_path }
+              %a{ href: logout_members_path }
                 = t('.sign_out')
           - else
             - if can_registred?
