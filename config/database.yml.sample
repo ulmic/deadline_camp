@@ -27,9 +27,9 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: deadline_camp_production
+  database: deadline_camp
   pool: 1
   timeout: 5000
   template: template0
-  username: deadline_camp_production
+  username: deadline_camp
   password: mIKBzvbllRvwJObaSTkeg
