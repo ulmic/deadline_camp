@@ -29,7 +29,7 @@
         .fotorama{ "data-transition" => "crossfade", "data-autoplay" => "true", "data-loop" => "true", "data-width" => "400px","data-ratio" => "1200/900" }
           - @photo_album.sorted_photos.each do |photo|
             = image_tag photo.image_url, "data-caption" => photo.name
-        %p= link_to "Все фотоальбомы", photo_albums_path
+        %p= link_to "Все фотоальбомы", photo_albums_path, class: "btn"
 
 .center.splitter
   = image_tag 'grey_out.png'
