@@ -1,0 +1,129 @@
+- model_class = Member
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
+
+%p
+  %strong= model_class.human_attribute_name(:state) + ':'
+  %br
+  = @member.state
+%p
+  %strong= model_class.human_attribute_name(:email) + ':'
+  %br
+  = @member.email
+%p
+  %strong= model_class.human_attribute_name(:first_name) + ':'
+  %br
+  = @member.first_name
+%p
+  %strong= model_class.human_attribute_name(:last_name) + ':'
+  %br
+  = @member.last_name
+%p
+  %strong= model_class.human_attribute_name(:phone) + ':'
+  %br
+  = @member.phone
+%p
+  %strong= model_class.human_attribute_name(:skype) + ':'
+  %br
+  = @member.skype
+%p
+  %strong= model_class.human_attribute_name(:school) + ':'
+  %br
+  = @member.school
+%p
+  %strong= model_class.human_attribute_name(:web) + ':'
+  %br
+  = @member.web
+%p
+  %strong= model_class.human_attribute_name(:camp_time) + ':'
+  %br
+  = @member.camp_time
+%p
+  %strong= model_class.human_attribute_name(:camp_life) + ':'
+  %br
+  = @member.camp_life
+%p
+  %strong= model_class.human_attribute_name(:camp_fee) + ':'
+  %br
+  = @member.camp_fee
+%p
+  %strong= model_class.human_attribute_name(:camp_notebook) + ':'
+  %br
+  = @member.camp_notebook
+%p
+  %strong= model_class.human_attribute_name(:hobby) + ':'
+  %br
+  = @member.hobby
+%p
+  %strong= model_class.human_attribute_name(:sport) + ':'
+  %br
+  = @member.sport
+%p
+  %strong= model_class.human_attribute_name(:password_digest) + ':'
+  %br
+  = @member.password_digest
+%p
+  %strong= model_class.human_attribute_name(:auth_token) + ':'
+  %br
+  = @member.auth_token
+%p
+  %strong= model_class.human_attribute_name(:group) + ':'
+  %br
+  = @member.group
+%p
+  %strong= model_class.human_attribute_name(:how_hear_about_as) + ':'
+  %br
+  = @member.how_hear_about_as
+%p
+  %strong= model_class.human_attribute_name(:facebook) + ':'
+  %br
+  = @member.facebook
+%p
+  %strong= model_class.human_attribute_name(:twitter) + ':'
+  %br
+  = @member.twitter
+%p
+  %strong= model_class.human_attribute_name(:vkontakte) + ':'
+  %br
+  = @member.vkontakte
+%p
+  %strong= model_class.human_attribute_name(:city) + ':'
+  %br
+  = @member.city
+%p
+  %strong= model_class.human_attribute_name(:birthday) + ':'
+  %br
+  = @member.birthday
+%p
+  %strong= model_class.human_attribute_name(:photo) + ':'
+  %br
+  = @member.photo
+%p
+  %strong= model_class.human_attribute_name(:middle_name) + ':'
+  %br
+  = @member.middle_name
+%p
+  %strong= model_class.human_attribute_name(:reason) + ':'
+  %br
+  = @member.reason
+%p
+  %strong= model_class.human_attribute_name(:question) + ':'
+  %br
+  = @member.question
+%p
+  %strong= model_class.human_attribute_name(:how_long_programming) + ':'
+  %br
+  = @member.how_long_programming
+%p
+  %strong= model_class.human_attribute_name(:what_you_want) + ':'
+  %br
+  = @member.what_you_want
+%p
+  %strong= model_class.human_attribute_name(:what_you_tried) + ':'
+  %br
+  = @member.what_you_tried
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), members_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_member_path(@member), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), admin_member_path(@member), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

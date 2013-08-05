@@ -15,7 +15,7 @@ DeadlineCamp::Application.routes.draw do
     namespace :admin do
       root to: 'welcome#index'
 
-      resources :members, only: [:index, :edit, :update, :destroy]
+      resources :members, except: [:new, :create]
       resources :pages
       resources :news
       resources :photo_albums

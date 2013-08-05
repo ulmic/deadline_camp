@@ -1,4 +1,8 @@
 class Web::Admin::MembersController < Web::Admin::ApplicationController
+  def show
+    @member = Member.find params[:id]
+  end
+
   def index
     @search = Member.active.metasearch( search_params(params[:search]) )
     @members = @search.page(params[:page])
