@@ -36,7 +36,7 @@ class Web::MembersControllerTest < ActionController::TestCase
   test "should post create" do
     attrs = attributes_for(:member)
 
-    post :create, :member => attrs
+    post :create, member: attrs
     assert_response :redirect
 
     member = Member.find_by_email attrs[:email]

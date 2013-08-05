@@ -9,15 +9,15 @@
     %h3 Выездной обучающий семинар для молодёжи, которая хочет работать в сфере ИТ, в частности, заниматься разработкой программных продуктов. Участники в течение нескольких дней будут обучаться основам программирования.
     %small Участником может стать любой желающий в возрасте от 14 до 18 лет включительно!
     - if member_signed_in?
-      %a.btn.btn-primary.btn-large{:href => edit_account_path }
+      %a.btn.btn-primary.btn-large{ href: edit_account_path }
         %i.icon-chevron-right
           Профиль
     - unless member_signed_in?
       - if can_registred?
-        %a.btn.btn-success.btn-large{ :href => new_member_path }
+        %a.btn.btn-success.btn-large{ href: new_member_path }
           %i.icon-chevron-right
           Регистрация
-      %a.btn.btn-primary.btn-large{ :href => login_members_path }
+      %a.btn.btn-primary.btn-large{ href: login_members_path }
         %i.icon-chevron-right
           Вход
   .span6
@@ -29,7 +29,7 @@
         .fotorama{ "data-transition" => "crossfade", "data-autoplay" => "true", "data-loop" => "true", "data-width" => "400px","data-ratio" => "1200/900" }
           - @photo_album.sorted_photos.each do |photo|
             = image_tag photo.image_url, "data-caption" => photo.name
-        %p= link_to "Все фотоальбомы", photo_albums_path
+        %p= link_to "Все фотоальбомы", photo_albums_path, class: "btn"
 
 .center.splitter
   = image_tag 'grey_out.png'
@@ -43,12 +43,12 @@
             .well
               - if n.photo.present?
                 = image_tag n.photo.thumb
-              %a.b-news{:href => news_path(n)}
+              %a.b-news{ href: news_path(n)}
                 %h4= n.name
               - if n.published_at?
-                .help-block= l n.published_at, :format => :news
+                .help-block= l n.published_at, format: :news
               != truncate_sanitize_rem_br n.body, 250
-          .news_link= link_to "Все новости", news_index_path, :class => 'btn'
+          .news_link= link_to "Все новости", news_index_path, class: 'btn'
       .span3
         = render 'layouts/shared/twitter_widget'
 
@@ -85,10 +85,10 @@
     %h4 Организаторы
     .span2
       %br
-      %a{:href => 'http://www.ulmic.ru/'}
-        = image_tag 'picture_mic.png', :class => "logo_org"
+      %a{ href: 'http://www.ulmic.ru/'}
+        = image_tag 'picture_mic.png', class: "logo_org"
     .span2
-      = image_tag '4_logo_department.png', :class => "logo_org"
+      = image_tag '4_logo_department.png', class: "logo_org"
 .row.landing_bottom
   .span12
     %h4 Информационные партнёры

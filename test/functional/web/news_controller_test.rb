@@ -4,7 +4,7 @@ class Web::NewsControllerTest < ActionController::TestCase
   setup do
     @news = create :news, :published
 
-    @params = {:id => @news}
+    @params = {id: @news}
   end
 
   test "should get index" do

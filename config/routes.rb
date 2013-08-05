@@ -1,28 +1,28 @@
 DeadlineCamp::Application.routes.draw do
 
-  match "/404", :to => "web/errors#not_found"
-  match "/500", :to => "web/errors#internal_server_error"
+  match "/404", to: "web/errors#not_found"
+  match "/500", to: "web/errors#internal_server_error"
 
   mount Ckeditor::Engine => '/ckeditor'
 
   namespace :api do
-    resources :members, :only => [:index, :show]
+    resources :members, only: [:index, :show]
   end
 
-  scope :module => :web do
-    root :to => 'welcome#index'
+  scope module: :web do
+    root to: 'welcome#index'
 
     namespace :admin do
-      root :to => 'welcome#index'
+      root to: 'welcome#index'
 
-      resources :members, :only => [:index, :edit, :update, :destroy]
+      resources :members, only: [:index, :edit, :update, :destroy]
       resources :pages
       resources :news
       resources :photo_albums
-      resource :session, :only => [:new, :create, :destroy]
+      resource :session, only: [:new, :create, :destroy]
     end
 
-    resources :members, :only => [:index, :new, :create] do
+    resources :members, only: [:index, :new, :create] do
       collection  do
         #FIXME
         post "login"
@@ -30,16 +30,16 @@ DeadlineCamp::Application.routes.draw do
         get "logout" => "members#logout"
       end
     end
-    resource :account, :only => [:show, :edit, :update] do
-      scope :module => :account do
-        resource :password, :only => [:edit, :update]
+    resource :account, only: [:show, :edit, :update] do
+      scope module: :account do
+        resource :password, only: [:edit, :update]
       end
     end
-    resource :remind_password, :only => [:new, :create]
-    resources :pages, :only => [:show]
-    resources :news, :only => [:index, :show]
-    resources :photo_albums, :only => [:index]
-    resources :first_deadline, :only => [:index] do
+    resource :remind_password, only: [:new, :create]
+    resources :pages, only: [:show]
+    resources :news, only: [:index, :show]
+    resources :photo_albums, only: [:index]
+    resources :first_deadline, only: [:index] do
       collection do
         get :news
       end

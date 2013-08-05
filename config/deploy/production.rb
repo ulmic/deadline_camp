@@ -8,7 +8,7 @@ set :keep_releases, 15
 
 role :web, "ulgood.ru"
 role :app, "ulgood.ru"
-role :db,  "ulgood.ru", :primary => true
+role :db,  "ulgood.ru", primary: true
 
 #set :whenever_command, "bundle exec whenever"
 #require "whenever/capistrano"

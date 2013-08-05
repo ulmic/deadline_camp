@@ -7,7 +7,7 @@ class Web::Admin::MembersControllerTest < ActionController::TestCase
 
     @member = create :member, :with_full_profile
 
-    @params = {:id => @member.id}
+    @params = {id: @member.id}
   end
 
   test "should get index" do

@@ -31,7 +31,7 @@ class Web::AccountsControllerTest < ActionController::TestCase
     attrs[:others_attributes] = form_attributes_for('member/other')
     attrs[:preferences_attributes] = form_attributes_for('member/preference')
 
-    put :update, :member => attrs
+    put :update, member: attrs
     assert_response :redirect
   end
 
