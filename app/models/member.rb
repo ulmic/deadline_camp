@@ -35,32 +35,33 @@ class Member < ActiveRecord::Base
   has_many :others
   has_many :preferences
 
-  validates :password, :presence => { :on => :create }
-  validates :phone, :presence => true, :phone => true
-  validates :email, :presence => true, :uniqueness => true, :email => true
-  validates :first_name, :presence => true
-  validates :last_name, :presence => true
+  validates :password, presence: { on: :create }
+  validates :phone, presence: true, phone: true
+  validates :email, presence: true, uniqueness: true, email: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
   validates :middle_name, presence: true,
                           length: { maximum: 255 }
-  validates :facebook, :slug => true, :allow_blank => true
-  validates :twitter, :slug => true, :allow_blank => true
-  validates :vkontakte, :slug => true, :allow_blank => true
-  validates :city, :presence => true
-  validates :birthday, :presence => true,
-                       :date => { :after => Date.new(1994, 8, 16), :before => Date.new(1999, 8, 16) }
+  validates :facebook, slug: true, allow_blank: true
+  validates :twitter, slug: true, allow_blank: true
+  validates :vkontakte, slug: true, allow_blank: true
+  validates :city, presence: true
+  validates :birthday, presence: true,
+                       date: { after: Date.new(1994, 8, 16),
+                               before: Date.new(1999, 8, 16) }
   validates :reason, presence: true
   validates :question, presence: true
   validates :what_you_tried, presence: true
   validates :what_you_want, presence: true
   validates :how_long_programming, presence: true
 
-  state_machine :state, :initial => :new do
+  state_machine :state, initial: :new do
     state :new
     state :accepted
     state :busted
 
     event :accept do
-      transition :new => :accepted
+      transition new: :accepted
     end
 
     event :bust do
