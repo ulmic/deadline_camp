@@ -44,5 +44,10 @@ DeadlineCamp::Application.routes.draw do
         get :news
       end
     end
+    resources :welcome do
+      collection do
+        get :place
+      end
+    end
   end
 end
