@@ -11,7 +11,7 @@ class Web::Admin::SessionsController < Web::Admin::BaseApplicationController
     else
       @user = User.new(params[:user])
       flash.now[:error] = flash_translate(:authenticate_error)
-      render :action => :new
+      render action: :new
     end
   end
 

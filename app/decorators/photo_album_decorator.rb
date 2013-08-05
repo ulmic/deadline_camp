@@ -27,7 +27,7 @@ class PhotoAlbumDecorator < Draper::Base
   #
   #   def created_at
   #     h.content_tag :span, time.strftime("%a %m/%d/%y"),
-  #                   :class => 'timestamp'
+  #                   class: 'timestamp'
   #   end
   #
   def shuffle_photos

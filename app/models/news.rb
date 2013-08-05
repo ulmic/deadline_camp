@@ -11,20 +11,20 @@ class News < ActiveRecord::Base
 
   include UsefullScopes
 
-  state_machine :state, :initial => :new do
+  state_machine :state, initial: :new do
     state :new
     state :published
 
     event :publish do
-      transition :new => :published
+      transition new: :published
     end
   end
 
   scope :published, with_state(:published)
 
-  validates :uri, :slug => true, :uniqueness => true
-  validates :name, :presence => true
-  validates :published_at, :presence => true
+  validates :uri, slug: true, uniqueness: true
+  validates :name, presence: true
+  validates :published_at, presence: true
 
   class << self
     def web

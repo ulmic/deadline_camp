@@ -23,7 +23,7 @@ class MemberCollectionConvertor
   private
 
     def default_options
-      {:columns => [
+      {columns: [
         :id,
         :state,
         :email,

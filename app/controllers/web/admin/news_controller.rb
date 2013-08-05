@@ -17,10 +17,10 @@ class Web::Admin::NewsController < Web::Admin::ApplicationController
 
     if @news.save
       flash[:success] = flash_translate(:success)
-      #redirect_to :action => :edit
+      #redirect_to action: :edit
       redirect_to edit_admin_news_path(@news.id)
     else
-      render :action => :new
+      render action: :new
     end
   end
 
@@ -31,7 +31,7 @@ class Web::Admin::NewsController < Web::Admin::ApplicationController
       flash[:success] = flash_translate(:success)
       redirect_to edit_admin_news_path(@news.id)
     else
-      render :action => :edit
+      render action: :edit
     end
   end
 

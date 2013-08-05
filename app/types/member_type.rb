@@ -8,7 +8,7 @@ class MemberType < Member
 
   [:jobs, :additional_educations, :achievements, :langs, :skill_databases, :skill_ides, :skill_operation_systems,
     :skill_others, :skill_program_langs, :others, :preferences].each do |assoc|
-    accepts_nested_attributes_for assoc, :reject_if => :all_blank, :allow_destroy => true
+    accepts_nested_attributes_for assoc, reject_if: :all_blank, allow_destroy: true
   end
 
 end

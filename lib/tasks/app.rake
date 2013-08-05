@@ -1,7 +1,7 @@
 namespace :app do
 
   desc "Regenerate member password with bad password hash"
-  task :fix_member_password => :environment do
+  task fix_member_password: :environment do
     Member.find_each do |m|
       begin
         BCrypt::Password.new(m.password_digest)
@@ -14,7 +14,7 @@ namespace :app do
   end
 
   desc "Fill member skills dict type"
-  task :fix_member_skill_dict_type => :environment do
+  task fix_member_skill_dict_type: :environment do
     Member::SkillOs.find_each do |skill|
       skill.dict_type = "Os"
       skill.save!
@@ -34,7 +34,7 @@ namespace :app do
   end
 
   desc "Fix Member Skills"
-  task :fix_member_skills => :environment do
+  task fix_member_skills: :environment do
     Member::Skill.where(dict_type: 'ProgramLang').find_each do |skill|
       new_skill                 = Member::SkillProgramLang.new
       new_skill.program_lang_id = skill.dict_id
@@ -74,7 +74,7 @@ namespace :app do
   end
 
   desc "Fill news state"
-  task :fix_news_state => :environment do
-    News.update_all :state => :published
+  task fix_news_state: :environment do
+    News.update_all state: :published
   end
 end

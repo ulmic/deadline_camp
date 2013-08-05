@@ -13,10 +13,10 @@ class Web::RemindPasswordsController < Web::ApplicationController
   rescue ActiveRecord::RecordNotFound
     @member = Member.new params[:member]
     flash.now[:error] = flash_translate(:not_found)
-    render :action => :new
+    render action: :new
   rescue ActiveRecord::RecordInvalid => e
     @member = e.record
     flash.now[:error] = flash_translate(:error)
-    render :action => :new
+    render action: :new
   end
 end

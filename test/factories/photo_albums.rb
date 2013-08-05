@@ -7,7 +7,7 @@ FactoryGirl.define do
 
     trait :with_photo do
       after(:create) do |album|
-        create 'photo_album/photo', :photo_album => album
+        create 'photo_album/photo', photo_album: album
       end
     end
   end

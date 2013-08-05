@@ -32,7 +32,7 @@ FactoryGirl.define do
       twitter           { generate :uri }
 
       after(:create) do |instance|
-        with_options :member => instance do |m|
+        with_options member: instance do |m|
           m.create 'member/additional_education'
           m.create 'member/achievement'
           m.create 'member/lang'

@@ -11,9 +11,9 @@ class Web::Admin::SessionsControllerTest < ActionController::TestCase
   end
 
   test "should post create" do
-    attrs = {:email => @user.email, :password => @user.password}
+    attrs = {email: @user.email, password: @user.password}
 
-    post :create, :user => attrs
+    post :create, user: attrs
     assert_response :redirect
 
     assert user_signed_in?
