@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 3.2.0'
 
-gem 'syntax_fix'
-
 gem 'pg'
 
 gem 'jquery-rails', '2.3.0'
