@@ -6,4 +6,8 @@ class Web::WelcomeControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get place" do
+    get :place
+    assert_response :success
+  end
 end
