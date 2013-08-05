@@ -8,7 +8,7 @@ class Web::Admin::PhotoAlbumsControllerTest < ActionController::TestCase
 
     @photo_album = create :photo_album, :with_photo
 
-    @params = {:id => @photo_album.id}
+    @params = {id: @photo_album.id}
   end
 
   test "should get index" do

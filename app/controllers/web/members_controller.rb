@@ -20,7 +20,7 @@ class Web::MembersController < Web::ApplicationController
       flash[:success] = flash_translate(:success).html_safe
       redirect_to :root
     else
-      render :action => :new
+      render action: :new
     end
   end
 

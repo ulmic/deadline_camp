@@ -7,7 +7,7 @@ class Web::Admin::PagesControllerTest < ActionController::TestCase
 
     @page = create :page
 
-    @params = {:id => @page.id}
+    @params = {id: @page.id}
   end
 
   test "should get index" do

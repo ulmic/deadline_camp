@@ -11,11 +11,11 @@ class PhotoAlbum::PhotoUploader < CarrierWave::Uploader::Base
   end
 
   version :carousel do
-    process :resize_to_fill => [800, 600]
+    process resize_to_fill: [800, 600]
   end
 
   version :thumb do
-    process :resize_to_fit => [120, 90]
+    process resize_to_fit: [120, 90]
   end
 
   def extension_white_list

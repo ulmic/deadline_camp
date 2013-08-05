@@ -19,7 +19,7 @@ class Web::Admin::PhotoAlbumsController < Web::Admin::ApplicationController
       flash[:success] = flash_translate(:success)
       redirect_to edit_admin_photo_album_path(@photo_album.id)
     else
-      render :action => :new
+      render action: :new
     end
   end
 
@@ -30,7 +30,7 @@ class Web::Admin::PhotoAlbumsController < Web::Admin::ApplicationController
       flash[:success] = flash_translate(:success)
       redirect_to edit_admin_photo_album_path(@photo_album.id)
     else
-      render :action => :edit
+      render action: :edit
     end
   end
 

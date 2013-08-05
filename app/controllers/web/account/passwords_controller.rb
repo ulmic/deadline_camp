@@ -13,6 +13,6 @@ class Web::Account::PasswordsController < Web::Account::ApplicationController
     redirect_to root_path
   rescue ActiveRecord::RecordInvalid => e
     @member = e.record
-    render :action => :edit
+    render action: :edit
   end
 end

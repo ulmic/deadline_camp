@@ -3,7 +3,7 @@ require 'test_helper'
 class Web::Account::PasswordsControllerTest < ActionController::TestCase
   def setup
     @member = create :member, :with_auth_token
-    @params = { :auth_token => @member.auth_token }
+    @params = { auth_token: @member.auth_token }
   end
 
   test "should get edit" do
@@ -13,10 +13,10 @@ class Web::Account::PasswordsControllerTest < ActionController::TestCase
 
   test "should put update" do
     old_password_digest = @member.password_digest
-    attrs = {:password => 'new_password'}
+    attrs = {password: 'new_password'}
     attrs[:password_confirmation] = attrs[:password]
 
-    put :update, @params.merge(:member => attrs)
+    put :update, @params.merge(member: attrs)
     assert_response :redirect
 
     @member.reload

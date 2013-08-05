@@ -13,16 +13,16 @@ class Web::Admin::MembersController < Web::Admin::ApplicationController
 
     if @member.update_attributes(params[:member])
       flash[:success] = flash_translate(:success)
-      redirect_to :action => :edit
+      redirect_to action: :edit
     else
-      render :action => :edit
+      render action: :edit
     end
   end
 
   def destroy
     @member = Member.find(params[:id])
     @member.bust
-    redirect_to :action => :index
+    redirect_to action: :index
   end
 
   private

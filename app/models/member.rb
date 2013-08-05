@@ -29,7 +29,7 @@ class Member < ActiveRecord::Base
   has_many :langs
   has_many :skill_databases
   has_many :skill_ides
-  has_many :skill_operation_systems, :class_name => 'SkillOs'
+  has_many :skill_operation_systems, class_name: 'SkillOs'
   has_many :skill_others
   has_many :skill_program_langs
   has_many :others

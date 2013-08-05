@@ -2,8 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 3.2.0'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'syntax_fix'
 
 gem 'pg'
 
@@ -29,8 +28,6 @@ gem "draper", '~> 0.18.0'
 gem "gon"
 gem 'date_validator'
 
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
   gem 'jquery-ui-rails'
   gem 'sass-rails'
@@ -42,21 +39,14 @@ group :assets do
   gem 'uglifier'
 end
 
-# To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
 gem 'unicorn'
 gem 'client_side_validations'
 gem 'validates'
 gem 'meta_search'
-#gem 'cocoon'
 
 group :development do
-  # Deploy with Capistrano
   gem 'capistrano'
   gem 'rvm-capistrano'
   gem 'capistrano-ext'

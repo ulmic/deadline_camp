@@ -11,7 +11,7 @@ class Web::SessionsController < Web::ApplicationController
     else
       @member = Member.new(params[:member])
       flash.now[:error] = flash_translate(:auth_error)
-      render :action => :new
+      render action: :new
     end
   end
 

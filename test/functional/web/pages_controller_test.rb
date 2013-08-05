@@ -4,7 +4,7 @@ class Web::PagesControllerTest < ActionController::TestCase
   setup do
     @page = create :page
 
-    @params = {:id => @page}
+    @params = {id: @page}
   end
 
   test "should get show" do
