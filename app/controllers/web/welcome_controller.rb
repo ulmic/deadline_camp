@@ -5,5 +5,6 @@ class Web::WelcomeController < Web::ApplicationController
   end
 
   def place
+    title t 'place'
   end
 end
