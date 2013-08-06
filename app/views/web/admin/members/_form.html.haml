@@ -1,5 +1,10 @@
 = simple_form_for @member, :validate => true, :url => admin_member_path(@member), :html => {:class => "form-horizontal well"} do |f|
   = f.error_notification
+  - if @member.errors.any?
+    #error_explanation
+      %ul
+      - @member.errors.full_messages.each do |msg|
+        %li= msg
 
   - with_options :scope => "members" do |member_t|
     = f.input :state_event, :as => :state_event
