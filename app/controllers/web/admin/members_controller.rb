@@ -1,4 +1,8 @@
 class Web::Admin::MembersController < Web::Admin::ApplicationController
+  def show
+    @member = Member.find params[:id]
+  end
+
   def index
     @search = Member.active.metasearch( search_params(params[:search]) )
     @members = @search.page(params[:page])
@@ -13,7 +17,7 @@ class Web::Admin::MembersController < Web::Admin::ApplicationController
 
     if @member.update_attributes(params[:member])
       flash[:success] = flash_translate(:success)
-      redirect_to action: :edit
+      redirect_to admin_member_path @member
     else
       render action: :edit
     end

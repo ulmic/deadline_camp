@@ -58,14 +58,19 @@ class Member < ActiveRecord::Base
   state_machine :state, initial: :new do
     state :new
     state :accepted
+    state :reserved
     state :busted
 
     event :accept do
-      transition new: :accepted
+      transition [:new, :reserved] => :accepted
+    end
+
+    event :reserve do
+      transition [:new, :accepted] => :reserved
     end
 
     event :bust do
-      transition [:new, :accepted] => :busted
+      transition [:new, :accepted, :reserved] => :busted
     end
   end
 
