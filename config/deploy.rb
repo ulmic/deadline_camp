@@ -21,6 +21,12 @@ namespace :deploy do
   end
 end
 
+namespace :backup do
+  task :uploads_restore do
+    run "rm -rf #{current_path}/public/uploads && cp -Pf #{app_dir}/shared/uploads #{current_path}/public/uploads"
+  end
+end
+
 namespace :capi do
   desc 'invoke rake task. Example: cap capi:task_invoke TASK="db:seed"'
   task :task_invoke  do
