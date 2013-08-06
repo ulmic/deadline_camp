@@ -17,7 +17,7 @@ class Web::Admin::MembersController < Web::Admin::ApplicationController
 
     if @member.update_attributes(params[:member])
       flash[:success] = flash_translate(:success)
-      redirect_to action: :edit
+      redirect_to admin_member_path @member
     else
       render action: :edit
     end

@@ -18,11 +18,13 @@ ru:
       member:
         state:
           events:
-            accept: 'Одобрить'
-            bust:   "Удалить"
+            accept:  'Одобрить'
+            reserve: 'В резерв'
+            bust:    "Удалить"
           states:
             new:      'Новый'
             accepted: 'Одобрен'
+            reserved: 'В резерве'
             busted:   "Удаленный"
     errors:
       models:

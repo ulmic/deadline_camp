@@ -1,128 +1,162 @@
 - model_class = Member
-.page-header
-  %h1=t '.title', :default => model_class.model_name.human.titleize
-
-%p
-  %strong= model_class.human_attribute_name(:state) + ':'
-  %br
-  = @member.state
-%p
-  %strong= model_class.human_attribute_name(:email) + ':'
-  %br
-  = @member.email
-%p
-  %strong= model_class.human_attribute_name(:first_name) + ':'
-  %br
-  = @member.first_name
-%p
-  %strong= model_class.human_attribute_name(:last_name) + ':'
-  %br
-  = @member.last_name
-%p
-  %strong= model_class.human_attribute_name(:phone) + ':'
-  %br
-  = @member.phone
-%p
-  %strong= model_class.human_attribute_name(:skype) + ':'
-  %br
-  = @member.skype
-%p
-  %strong= model_class.human_attribute_name(:school) + ':'
-  %br
-  = @member.school
-%p
-  %strong= model_class.human_attribute_name(:web) + ':'
-  %br
-  = @member.web
-%p
-  %strong= model_class.human_attribute_name(:camp_time) + ':'
-  %br
-  = @member.camp_time
-%p
-  %strong= model_class.human_attribute_name(:camp_life) + ':'
-  %br
-  = @member.camp_life
-%p
-  %strong= model_class.human_attribute_name(:camp_fee) + ':'
-  %br
-  = @member.camp_fee
-%p
-  %strong= model_class.human_attribute_name(:camp_notebook) + ':'
-  %br
-  = @member.camp_notebook
-%p
-  %strong= model_class.human_attribute_name(:hobby) + ':'
-  %br
-  = @member.hobby
-%p
-  %strong= model_class.human_attribute_name(:sport) + ':'
-  %br
-  = @member.sport
-%p
-  %strong= model_class.human_attribute_name(:password_digest) + ':'
-  %br
-  = @member.password_digest
-%p
-  %strong= model_class.human_attribute_name(:auth_token) + ':'
-  %br
-  = @member.auth_token
-%p
-  %strong= model_class.human_attribute_name(:group) + ':'
-  %br
-  = @member.group
-%p
-  %strong= model_class.human_attribute_name(:how_hear_about_as) + ':'
-  %br
-  = @member.how_hear_about_as
-%p
-  %strong= model_class.human_attribute_name(:facebook) + ':'
-  %br
-  = @member.facebook
-%p
-  %strong= model_class.human_attribute_name(:twitter) + ':'
-  %br
-  = @member.twitter
-%p
-  %strong= model_class.human_attribute_name(:vkontakte) + ':'
-  %br
-  = @member.vkontakte
-%p
-  %strong= model_class.human_attribute_name(:city) + ':'
-  %br
-  = @member.city
-%p
-  %strong= model_class.human_attribute_name(:birthday) + ':'
-  %br
-  = @member.birthday
-%p
-  %strong= model_class.human_attribute_name(:photo) + ':'
-  %br
-  = @member.photo
-%p
-  %strong= model_class.human_attribute_name(:middle_name) + ':'
-  %br
-  = @member.middle_name
-%p
-  %strong= model_class.human_attribute_name(:reason) + ':'
-  %br
-  = @member.reason
-%p
-  %strong= model_class.human_attribute_name(:question) + ':'
-  %br
-  = @member.question
-%p
-  %strong= model_class.human_attribute_name(:how_long_programming) + ':'
-  %br
-  = @member.how_long_programming
-%p
-  %strong= model_class.human_attribute_name(:what_you_want) + ':'
-  %br
-  = @member.what_you_want
-%p
-  %strong= model_class.human_attribute_name(:what_you_tried) + ':'
-  %br
-  = @member.what_you_tried
-
+.tabbable
+  %ul.nav.nav-tabs
+    %li.active
+      %a{:href => '#general', "data-toggle" => "tab"}= t('members.general_info')
+    %li
+      %a{:href => '#additional_educations', "data-toggle" => "tab"}= t 'members.additional_educations_tab'
+    %li
+      %a{:href => '#skill', "data-toggle" => "tab"}= t 'members.skill'
+    %li
+      %a{:href => '#hobby', "data-toggle" => "tab"}= t('members.hobby')
+  .tab-content
+    .tab-pane.active#general
+      .row
+        .span5
+          %p
+            .label= @member.state
+          %p
+            = @member.first_name
+            = @member.middle_name
+            = @member.last_name
+          %p
+            = @member.phone
+          %p
+            = @member.city
+          %p
+            = @member.birthday
+          %p
+            = @member.email
+          %p
+            = @member.skype
+          %p
+            = @member.web
+          %p
+            %b= model_class.human_attribute_name :facebook
+            = @member.facebook
+          %p
+            %b= model_class.human_attribute_name :twitter
+            = @member.twitter
+          %p
+            %b= model_class.human_attribute_name :vkontakte
+            = @member.vkontakte
+          %p
+            %b= model_class.human_attribute_name :question
+            = @member.question
+          %p
+            %b= model_class.human_attribute_name :how_long_programming
+            = @member.how_long_programming
+          %p
+            %b= model_class.human_attribute_name :what_you_tried
+            = @member.what_you_tried
+          %p
+            %b= model_class.human_attribute_name :what_you_want
+            = @member.what_you_want
+          %p
+            %b= model_class.human_attribute_name :reason
+            = @member.reason
+        .span6
+          %p
+            = model_class.human_attribute_name :school
+            %b= @member.school
+          %p
+            = model_class.human_attribute_name :group
+            %b= @member.group
+          %p
+            = model_class.human_attribute_name :camp_time
+            %b= @member.camp_time
+          %p
+            = model_class.human_attribute_name :camp_life
+            %b= @member.camp_life
+          %p
+            = model_class.human_attribute_name :camp_notebook
+            %b= @member.camp_notebook
+          %p
+            = model_class.human_attribute_name :how_hear_about_as
+            %b= @member.how_hear_about_as
+    .tab-pane#additional_educations
+      %p
+        = model_class.human_attribute_name :s_additional_educations
+        = @member.additional_educations.each do |edu|
+          = edu.description
+          %br
+      %p
+        = model_class.human_attribute_name :s_achievements
+        = @member.achievements.each do |ach|
+          = ach.description
+          %br
+      %p
+        = model_class.human_attribute_name :s_langs
+        = @member.langs.each do |lang|
+          = lang.language
+          = lang.level
+    .tab-pane#skill
+      %p
+        = model_class.human_attribute_name :s_skill_program_langs
+        = @member.skill_program_langs.each do |skill|
+          = skill.program_lang
+          = skill.duration
+          = skill.level
+          = skill.description
+          %br
+      %p
+        = model_class.human_attribute_name :s_skill_databases
+        = @member.skill_databases.each do |db|
+          = db.database
+          = db.duration
+          = db.level
+          = db.description
+          %br
+      %p
+        = model_class.human_attribute_name :s_skill_operation_systems
+        = @member.skill_operation_systems.each do |os|
+          = os.os
+          = os.duration
+          = os.level
+          = os.description
+          %br
+      %p
+        = model_class.human_attribute_name :s_skill_ides
+        = @member.skill_ides.each do |ide|
+          = ide.ide
+          = ide.duration
+          = ide.level
+          = ide.description
+          %br
+      %p
+        = model_class.human_attribute_name :s_skill_others
+        = @member.skill_others.each do |other|
+          = other.name
+          = other.duration
+          = other.level
+          = other.description
+          %br
+      %p
+        = model_class.human_attribute_name :s_preferences
+        = @member.preferences.each do |pre|
+          = pre.description
+          %br
+      %p
+        = model_class.human_attribute_name :s_jobs
+        = @member.jobs.each do |job|
+          = job.company
+          = job.started_at
+          = job.finished_at
+          = job.job
+          = job.responsibility
+          = job.achievements
+          %br
+      %p
+        = model_class.human_attribute_name :s_others
+        = @member.others.each do |other|
+          = other.description
+    .tab-pane#hobby
+      %p
+        = model_class.human_attribute_name :hobby
+        = @member.hobby
+      %p
+        = model_class.human_attribute_name :sport
+        = @member.sport
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), members_path, :class => 'btn'
   = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_member_path(@member), :class => 'btn'
