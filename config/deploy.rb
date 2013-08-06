@@ -23,7 +23,7 @@ end
 
 namespace :backup do
   task :uploads_restore do
-    run "rm -rf #{current_path}/public/uploads && cp -Pf #{app_dir}/shared/uploads #{current_path}/public/uploads"
+    run "rm -rf #{current_path}/public/uploads && ln -sf #{deploy_to}/shared/uploads #{current_path}/public/uploads"
   end
 end
 
@@ -34,7 +34,7 @@ namespace :capi do
   end
 end
 
-before 'deploy:finalize_update', 'deploy:symlink_db'
+before 'deploy:finalize_update', 'deploy:symlink_db', 'backup:uploads_restore'
 after "deploy:restart", "unicorn:stop"
 after "deploy:update", "deploy:cleanup"
 
