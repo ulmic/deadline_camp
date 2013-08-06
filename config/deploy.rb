@@ -23,7 +23,7 @@ end
 
 namespace :backup do
   task :uploads_restore do
-    run "rm -rf #{current_path}/public/uploads && ln -sf #{deploy_to}/shared/uploads #{current_path}/public/uploads"
+    run "rm -rf #{release_path}/public/uploads && ln -sf #{deploy_to}/shared/uploads #{release_path}/public/uploads"
   end
 end
 
