@@ -77,68 +77,78 @@
     .tab-pane#additional_educations
       %p
         = model_class.human_attribute_name :s_additional_educations
-        = @member.additional_educations.each do |edu|
+        %br
+        - @member.additional_educations.each do |edu|
           = edu.description
           %br
       %p
         = model_class.human_attribute_name :s_achievements
-        = @member.achievements.each do |ach|
+        %br
+        - @member.achievements.each do |ach|
           = ach.description
           %br
       %p
-        = model_class.human_attribute_name :s_langs
-        = @member.langs.each do |lang|
+        %b= model_class.human_attribute_name :s_langs
+        %br
+        - @member.langs.each do |lang|
           = lang.language
           = lang.level
     .tab-pane#skill
       %p
-        = model_class.human_attribute_name :s_skill_program_langs
-        = @member.skill_program_langs.each do |skill|
+        %b= model_class.human_attribute_name :s_skill_program_langs
+        %br
+        - @member.skill_program_langs.each do |skill|
           = skill.program_lang
           = skill.duration
           = skill.level
           = skill.description
           %br
       %p
-        = model_class.human_attribute_name :s_skill_databases
-        = @member.skill_databases.each do |db|
+        %b= model_class.human_attribute_name :s_skill_databases
+        %br
+        - @member.skill_databases.each do |db|
           = db.database
           = db.duration
           = db.level
           = db.description
           %br
       %p
-        = model_class.human_attribute_name :s_skill_operation_systems
-        = @member.skill_operation_systems.each do |os|
+        %b= model_class.human_attribute_name :s_skill_operation_systems
+        %br
+        - @member.skill_operation_systems.each do |os|
           = os.os
           = os.duration
           = os.level
           = os.description
           %br
       %p
-        = model_class.human_attribute_name :s_skill_ides
-        = @member.skill_ides.each do |ide|
+        %b= model_class.human_attribute_name :s_skill_ides
+        %br
+        - @member.skill_ides.each do |ide|
           = ide.ide
           = ide.duration
           = ide.level
           = ide.description
           %br
       %p
-        = model_class.human_attribute_name :s_skill_others
-        = @member.skill_others.each do |other|
+        %b= model_class.human_attribute_name :s_skill_others
+        %br
+        - @member.skill_others.each do |other|
           = other.name
           = other.duration
           = other.level
           = other.description
           %br
       %p
-        = model_class.human_attribute_name :s_preferences
-        = @member.preferences.each do |pre|
+        %b= model_class.human_attribute_name :s_preferences
+        %br
+        - @member.preferences.each do |pre|
           = pre.description
           %br
       %p
-        = model_class.human_attribute_name :s_jobs
-        = @member.jobs.each do |job|
+        %b= model_class.human_attribute_name :s_jobs
+        %br
+        - @member.jobs.each do |job|
           = job.company
           = job.started_at
           = job.finished_at
@@ -147,15 +157,18 @@
           = job.achievements
           %br
       %p
-        = model_class.human_attribute_name :s_others
-        = @member.others.each do |other|
+        %b= model_class.human_attribute_name :s_others
+        %br
+        - @member.others.each do |other|
           = other.description
     .tab-pane#hobby
       %p
-        = model_class.human_attribute_name :hobby
+        %b= model_class.human_attribute_name :hobby
+        %br
         = @member.hobby
       %p
-        = model_class.human_attribute_name :sport
+        %b= model_class.human_attribute_name :sport
+        %br
         = @member.sport
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), members_path, :class => 'btn'
