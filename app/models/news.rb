@@ -40,6 +40,7 @@ class News < ActiveRecord::Base
     uri
   end
 
+  #FIXME
   def self.published_at_year(year)
     News.where("published_at >= :start_date AND published_at <= :end_date", {
                                                                               start_date: Date.new(year, 1, 1),
