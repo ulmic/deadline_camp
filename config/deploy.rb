@@ -21,6 +21,12 @@ namespace :deploy do
   end
 end
 
+namespace :backup do
+  task :uploads_restore do
+    run "rm -rf #{release_path}/public/uploads && ln -sf #{deploy_to}/shared/uploads #{release_path}/public/uploads"
+  end
+end
+
 namespace :capi do
   desc 'invoke rake task. Example: cap capi:task_invoke TASK="db:seed"'
   task :task_invoke  do
@@ -28,7 +34,7 @@ namespace :capi do
   end
 end
 
-before 'deploy:finalize_update', 'deploy:symlink_db'
+before 'deploy:finalize_update', 'deploy:symlink_db', 'backup:uploads_restore'
 after "deploy:restart", "unicorn:stop"
 after "deploy:update", "deploy:cleanup"
 
