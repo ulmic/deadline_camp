@@ -36,7 +36,7 @@ Configus.build Rails.env do
       end
     end
 
-    end_reg_time '2013-08-12 00:00:00'
+    end_reg_time '2013-08-13 00:00:00'
 
     photos do
       main_galary_limit 6
