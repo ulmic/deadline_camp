@@ -59,9 +59,8 @@
               != truncate_sanitize_rem_br n.body, 250
           .news_link= link_to "Все новости", news_index_path, class: 'btn'
       .span3
+        = render 'layouts/shared/twitter_read_button'
         = render 'layouts/shared/twitter_widget'
-
-
 .center.splitter
   = image_tag 'grey_out.png'
 .row
