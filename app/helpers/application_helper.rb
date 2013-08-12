@@ -22,6 +22,11 @@ module ApplicationHelper
     Time.current <= end_time
   end
 
+  def view_members_list?
+    view_time = Time.zone.parse( configus.view_members_list )
+    Time.current >= view_time
+  end
+
   def truncate_sanitize_rem_br(text, length)
     return '' if text.blank?
     truncate( sanitize(text, tags: []), length: length ).gsub(/\r/, "").gsub(/\n/, "").gsub(/&[a-z]{0-5}\.\.\.$/, "...")

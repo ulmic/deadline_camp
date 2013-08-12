@@ -22,6 +22,8 @@ ru:
         - разрабатывал приложения под эту ОС
   sure: 'Вы уверены?'
   new:  'Новый'
+  accepted: 'Одобрен'
+  reserved: 'Не прошёл'
   add:  "Добавить"
   wrong_login:  Неверный логин или пароль
   registration: Регистрация
@@ -67,6 +69,7 @@ ru:
           news_list:         'Список новостей'
           photo_albums_list: "Список фотоальбомов"
   members:
+    members_list:       'Результаты отбора'
     how_hear_about_as_list:
       - знакомые
       - на сайте ulmic.ru

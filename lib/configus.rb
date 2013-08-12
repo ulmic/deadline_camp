@@ -38,6 +38,8 @@ Configus.build Rails.env do
 
     end_reg_time '2013-08-13 00:00:00'
 
+    view_members_list '2013-08-14 18:00:00'
+
     photos do
       main_galary_limit 6
     end
