@@ -1,0 +1,16 @@
+%h1 Результаты отбора
+%hr
+- if view_members_list?
+  %table.table.table-striped
+    %thead
+      %td ФИО
+      %td Учебное заведение
+      %td
+    - @members.each do |member|
+      %tr
+        %td= member.decorate.full_name
+        %td= member.school
+        %td
+          = member.decorate.state_label
+- else
+  ещё не выложены
