@@ -7,6 +7,22 @@ class MemberDecorator < Draper::Base
     [ first_name, middle_name, last_name ].join(' ')
   end
 
+  def state_label
+    if model.accepted?
+      helpers.content_tag :div, class: 'label label-success' do
+        I18n.t model.state
+      end
+    elsif model.reserved?
+      helpers.content_tag :div, class: 'label label-important' do
+        I18n.t model.state
+      end
+    else
+      helpers.content_tag :div, class: 'label' do
+        I18n.t model.state
+      end
+    end
+  end
+
   def s_jobs
     out = jobs.map do |job|
       [job.company, job.started_at, job.finished_at, job.job, job.responsibility, job.achievements].join(', ')
