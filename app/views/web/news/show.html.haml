@@ -3,5 +3,6 @@
 %h2= @news.name
 = image_tag @news.photo, class: "img-polaroid main_photo"
 - if @news.published_at?
-  .help-block= l @news.published_at, :format => :news
+  .help-block= l @news.published_at, format: :news
 != @news.body
+= render 'layouts/shared/twitter_twit_button'
