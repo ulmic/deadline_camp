@@ -8,6 +8,6 @@ class Web::FirstDeadlineController < Web::ApplicationController
 
   def news
     title t 'news'
-    @news = News.published_at_year(2012).web.page params[:page]
+    @news = News.published_at_year(2012)
   end
 end
