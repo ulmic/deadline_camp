@@ -7,7 +7,16 @@
   .span6
     %h2 22 - 26 августа 2013 года
     %h3 Выездной обучающий семинар для молодёжи, которая хочет работать в сфере ИТ, в частности, заниматься разработкой программных продуктов. Участники в течение нескольких дней будут обучаться основам программирования.
-    %small Участником может стать любой желающий в возрасте от 14 до 18 лет включительно!
+    - if can_registred?
+      %small Участником может стать любой желающий в возрасте от 14 до 18 лет включительно!
+    - else
+      %span.label.label-important
+        = t 'end_reg_time'
+    - if view_members_list?
+      %a.btn.btn-primary.btn-large{ href: members_path }
+        Результаты отбора
+    - else
+      %small= t 'we_will_publish_results'
     - if member_signed_in?
       %a.btn.btn-primary.btn-large{ href: edit_account_path }
         %i.icon-chevron-right
