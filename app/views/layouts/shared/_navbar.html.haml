@@ -27,7 +27,7 @@
             %li
               %a
                 %span.label.label-important
-                  = t '.end_reg_time'
+                  = t 'end_reg_time'
           - if member_signed_in?
             %li
               %a{ href: edit_account_path }
@@ -41,5 +41,7 @@
               %li.divider-vertical
             - if view_members_list?
               = item :li, t('.member'), members_path
+            - else
+              = item :li, t('we_will_publish_results'), "#"
             = item :li, t('.login'), login_members_path
 
