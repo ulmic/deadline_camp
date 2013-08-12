@@ -19,12 +19,12 @@ ru:
         state:
           events:
             accept:  'Одобрить'
-            reserve: 'В резерв'
+            reserve: 'Не прошёл'
             bust:    "Удалить"
           states:
             new:      'Новый'
             accepted: 'Одобрен'
-            reserved: 'В резерве'
+            reserved: 'Не прошёл'
             busted:   "Удаленный"
     errors:
       models:

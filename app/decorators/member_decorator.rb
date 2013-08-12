@@ -4,7 +4,7 @@ class MemberDecorator < Draper::Base
     :skill_others, :skill_program_langs
 
   def full_name
-    [ first_name, last_name ].join(' ')
+    [ first_name, middle_name, last_name ].join(' ')
   end
 
   def s_jobs

@@ -1,0 +1,15 @@
+%h1 Результаты отбора
+%hr
+%table.table.table-striped
+  %thead
+    %td ФИО
+    %td Учебное заведение
+    %td
+  - @members.each do |member|
+    %tr
+      #FIXME
+      %td #{member.first_name} #{member.middle_name} #{member.last_name}
+      %td= member.school
+      %td
+        .label
+          = t member.state
