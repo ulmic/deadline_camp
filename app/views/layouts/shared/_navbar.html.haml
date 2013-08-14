@@ -40,7 +40,7 @@
               = item :li, t('.new_member'), new_member_path
               %li.divider-vertical
             - if view_members_list?
-              = item :li, t('.member'), members_path
+              = item :li, t('.members_list'), members_path
             - else
               = item :li, t('we_will_publish_results'), "#"
             = item :li, t('.login'), login_members_path
