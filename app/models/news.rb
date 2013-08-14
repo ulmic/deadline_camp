@@ -9,6 +9,8 @@ class News < ActiveRecord::Base
 
   mount_uploader :photo, News::PhotoUploader
 
+  default_scope order('published_at DESC')
+
   include UsefullScopes
 
   state_machine :state, initial: :new do
