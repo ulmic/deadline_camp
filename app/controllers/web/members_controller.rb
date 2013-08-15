@@ -1,6 +1,6 @@
 class Web::MembersController < Web::ApplicationController
   def index
-    @members = Member.page(params[:page])
+    @members = Member.all
   end
 
   def new
