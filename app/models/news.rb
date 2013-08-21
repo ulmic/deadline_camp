@@ -44,9 +44,10 @@ class News < ActiveRecord::Base
 
   #FIXME
   def self.published_at_year(year)
-    @news = News.where("published_at >= :start_date AND published_at <= :end_date", {
+    @news = News.where("published_at >= :start_date AND published_at <= :end_date AND published_at <= :current_date", {
                                                                               start_date: Date.new(year, 1, 1),
-                                                                              end_date: Date.new(year, 12, 31)
+                                                                              end_date: Date.new(year, 12, 31),
+                                                                              current_date: Time.now
                                                                             })
     @news.find_all_by_state :published
   end
